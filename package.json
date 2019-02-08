@@ -1,0 +1,42 @@
+{
+  "name": "wc-epic-spinners",
+  "description": "Epic spinners implemented as native web components",
+  "version": "1.0.0",
+  "browser": "dist/wc-epic-spinners.js",
+  "main": "src/index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/craigjennings11/wc-epic-spinners.git"
+  },
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "keywords": [
+    "web components",
+    "epic spinners",
+    "spinners"
+  ],
+  "files": [
+    "/dist/**",
+    "/src/**"
+  ],
+  "scripts": {
+    "build:dev": "rollup -c rollup.config.dev.js",
+    "build:docs": "rollup -c rollup.config.docs.js",
+    "build:prod": "rollup -c rollup.config.prod.js",
+    "prepublishOnly": "yarn run build:prod",
+    "test": "eslint src/ --quiet"
+  },
+  "devDependencies": {
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-sort-imports-es6-autofix": "^0.3.0",
+    "rollup": "^1.1.2",
+    "rollup-plugin-babel-minify": "^7.0.0",
+    "rollup-plugin-filesize": "^6.0.1",
+    "rollup-plugin-fill-html": "^1.1.0",
+    "rollup-plugin-node-resolve": "^4.0.0"
+  }
+}

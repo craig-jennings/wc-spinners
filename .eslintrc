@@ -1,0 +1,34 @@
+{
+  "extends": "airbnb-base",
+
+  "env": {
+    "browser": true
+  },
+
+  "plugins": [
+    "sort-imports-es6-autofix"
+  ],
+
+  "rules": {
+    "class-methods-use-this": "off",
+    "func-names": ["error", "as-needed"],
+    "import/extensions": ["error", "always", { "ignorePackages": true }],
+    "import/first": ["error", { "absolute-first": false }],
+    "import/no-unresolved": "off",
+    "import/order": "off",
+    "import/prefer-default-export": "off",
+    "max-len": ["warn", 100],
+    "no-continue": "off",
+    "no-param-reassign": "warn",
+    "no-plusplus": "off",
+    "no-underscore-dangle": "off",
+
+    "sort-imports-es6-autofix/sort-imports-es6": ["error", {
+      "ignoreCase": true,
+      "ignoreMemberSort": false,
+      "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
+    }],
+
+    "wrap-iife": ["error", "inside"]
+  }
+}
