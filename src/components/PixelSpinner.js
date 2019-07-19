@@ -19,71 +19,65 @@ export class PixelSpinner extends SpinnerElement {
     ];
   }
 
-  template({ color, duration, size }) {
+  style({ color, duration, size }) {
     return `
-      <style>
-        * {
-          box-sizing: border-box;
+      .pixel-spinner {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        height: var(--pixel-spinner-size, ${size}px);
+        justify-content: center;
+        width: var(--pixel-spinner-size, ${size}px);
+      }
+
+      .pixel-spinner .pixel-spinner-inner {
+        animation: pixel-spinner-animation var(--pixel-spinner-duration, ${duration}s) linear infinite;
+        background-color: var(--pixel-spinner-color, ${color});
+        box-shadow: 15px 15px  0 0,
+                    -15px -15px  0 0,
+                    15px -15px  0 0,
+                    -15px 15px  0 0,
+                    0 15px  0 0,
+                    15px 0  0 0,
+                    -15px 0  0 0,
+                    0 -15px 0 0;
+        color: var(--pixel-spinner-color, ${color});
+        height: calc(var(--pixel-spinner-size, ${size}px) / 7);
+        width: calc(var(--pixel-spinner-size, ${size}px) / 7);
+      }
+
+      @keyframes pixel-spinner-animation {
+        50% {
+          box-shadow: 20px 20px 0px 0px,
+                      -20px -20px 0px 0px,
+                      20px -20px 0px 0px,
+                      -20px 20px 0px 0px,
+                      0px 10px 0px 0px,
+                      10px 0px 0px 0px,
+                      -10px 0px 0px 0px,
+                      0px -10px 0px 0px;
         }
 
-        :host {
-          display: block;
+        75% {
+          box-shadow: 20px 20px 0px 0px,
+                      -20px -20px 0px 0px,
+                      20px -20px 0px 0px,
+                      -20px 20px 0px 0px,
+                      0px 10px 0px 0px,
+                      10px 0px 0px 0px,
+                      -10px 0px 0px 0px,
+                      0px -10px 0px 0px;
         }
 
-       .pixel-spinner {
-          align-items: center;
-          display: flex;
-          flex-direction: row;
-          height: var(--pixel-spinner-size, ${size}px);
-          justify-content: center;
-          width: var(--pixel-spinner-size, ${size}px);
+        100% {
+          transform: rotate(360deg);
         }
+      }
+    `;
+  }
 
-        .pixel-spinner .pixel-spinner-inner {
-          animation: pixel-spinner-animation var(--pixel-spinner-duration, ${duration}s) linear infinite;
-          background-color: var(--pixel-spinner-color, ${color});
-          box-shadow: 15px 15px  0 0,
-                      -15px -15px  0 0,
-                      15px -15px  0 0,
-                      -15px 15px  0 0,
-                      0 15px  0 0,
-                      15px 0  0 0,
-                      -15px 0  0 0,
-                      0 -15px 0 0;
-          color: var(--pixel-spinner-color, ${color});
-          height: calc(var(--pixel-spinner-size, ${size}px) / 7);
-          width: calc(var(--pixel-spinner-size, ${size}px) / 7);
-        }
-
-        @keyframes pixel-spinner-animation {
-          50% {
-            box-shadow: 20px 20px 0px 0px,
-                        -20px -20px 0px 0px,
-                        20px -20px 0px 0px,
-                        -20px 20px 0px 0px,
-                        0px 10px 0px 0px,
-                        10px 0px 0px 0px,
-                        -10px 0px 0px 0px,
-                        0px -10px 0px 0px;
-          }
-
-          75% {
-            box-shadow: 20px 20px 0px 0px,
-                        -20px -20px 0px 0px,
-                        20px -20px 0px 0px,
-                        -20px 20px 0px 0px,
-                        0px 10px 0px 0px,
-                        10px 0px 0px 0px,
-                        -10px 0px 0px 0px,
-                        0px -10px 0px 0px;
-          }
-
-          100% {
-            transform: rotate(360deg);
-          }
-        }
-      </style>
-
+  template() {
+    return `
       <div class="pixel-spinner">
         <div class="pixel-spinner-inner"></div>
       </div>

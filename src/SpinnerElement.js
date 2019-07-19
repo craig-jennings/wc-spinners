@@ -21,7 +21,20 @@ class SpinnerElement extends HTMLElement {
   }
 
   update() {
-    this.root.innerHTML = this.template(this.props);
+    const template = this.template(this.props);
+
+    const styles = `
+      <style>
+        * { box-sizing: border-box; }
+
+        :host           { display: block; }
+        :host([hidden]) { display: none; }
+
+        ${this.style(this.props)}
+      </style>
+    `;
+
+    this.root.innerHTML = `${styles}${template}`;
   }
 }
 
