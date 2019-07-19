@@ -1,7 +1,7 @@
 {
   "name": "wc-epic-spinners",
   "description": "Epic spinners implemented as native web components",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "browser": "dist/wc-epic-spinners.js",
   "main": "src/index.js",
   "license": "MIT",
