@@ -26,7 +26,7 @@ OR
 or for a specific spinner
 
 ```js
-  import 'wc-epic-spinners/dist/AtomSpinner.js';
+  import 'wc-epic-spinners/dist/atom-spinner.js';
 
   const spinner = document.createElement('atom-spinner');
   document.body.append(spinner);
@@ -48,7 +48,7 @@ or for a specific spinner
 <body>
   <atom-spinner></atom-spinner>
 
-  <script src="wc-epic-spinners/dist/AtomSpinner.js"></script>
+  <script src="wc-epic-spinners/dist/atom-spinner.js"></script>
 </body>
 ```
 
