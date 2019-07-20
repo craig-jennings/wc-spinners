@@ -71,9 +71,9 @@ You can easily configure a spinner's size, color, and animation speed by either 
 ```html
 <style>
   :root {
-    --atom-spinner-color: #ff1d5e;
-    --atom-spinner-duration: 1s;
-    --atom-spinner-size: 60px;
+    --atom-spinner__color: #ff1d5e;
+    --atom-spinner__duration: 1s;
+    --atom-spinner__size: 60px;
   }
 </style>
 

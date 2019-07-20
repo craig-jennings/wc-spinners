@@ -23,14 +23,14 @@ export class HalfCircleSpinner extends SpinnerElement {
     return `
       .half-circle-spinner {
         border-radius: 100%;
-        height: var(--half-circle-spinner-size, ${size}px);
+        height: var(--half-circle-spinner__size, ${size}px);
         position: relative;
-        width: var(--half-circle-spinner-size, ${size}px);
+        width: var(--half-circle-spinner__size, ${size}px);
       }
 
       .half-circle-spinner .circle {
         border-radius: 100%;
-        border: calc(var(--half-circle-spinner-size, ${size}px) / 10) solid transparent;
+        border: calc(var(--half-circle-spinner__size, ${size}px) / 10) solid transparent;
         content: "";
         height: 100%;
         position: absolute;
@@ -38,13 +38,13 @@ export class HalfCircleSpinner extends SpinnerElement {
       }
 
       .half-circle-spinner .circle.circle-1 {
-        animation: half-circle-spinner-animation var(--half-circle-spinner-duration, ${duration}s) infinite;
-        border-top-color: var(--half-circle-spinner-color, ${color});
+        animation: half-circle-spinner-animation var(--half-circle-spinner__duration, ${duration}s) infinite;
+        border-top-color: var(--half-circle-spinner__color, ${color});
       }
 
       .half-circle-spinner .circle.circle-2 {
-        animation: half-circle-spinner-animation var(--half-circle-spinner-duration, ${duration}s) infinite alternate;
-        border-bottom-color: var(--half-circle-spinner-color, ${color});
+        animation: half-circle-spinner-animation var(--half-circle-spinner__duration, ${duration}s) infinite alternate;
+        border-bottom-color: var(--half-circle-spinner__color, ${color});
       }
 
       @keyframes half-circle-spinner-animation {

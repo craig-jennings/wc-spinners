@@ -23,9 +23,9 @@ export class OrbitSpinner extends SpinnerElement {
     return `
       .orbit-spinner {
         border-radius: 50%;
-        height: var(--orbit-spinner-size, ${size}px);
+        height: var(--orbit-spinner__size, ${size}px);
         perspective: 800px;
-        width: var(--orbit-spinner-size, ${size}px);
+        width: var(--orbit-spinner__size, ${size}px);
       }
 
       .orbit-spinner .orbit {
@@ -37,22 +37,22 @@ export class OrbitSpinner extends SpinnerElement {
       }
 
       .orbit-spinner .orbit:nth-child(1) {
-        animation: orbit-spinner-orbit-one-animation var(--orbit-spinner-duration, ${duration}s) linear infinite;
-        border-bottom: 3px solid var(--orbit-spinner-color, ${color});
+        animation: orbit-spinner-orbit-one-animation var(--orbit-spinner__duration, ${duration}s) linear infinite;
+        border-bottom: 3px solid var(--orbit-spinner__color, ${color});
         left: 0%;
         top: 0%;
       }
 
       .orbit-spinner .orbit:nth-child(2) {
-        animation: orbit-spinner-orbit-two-animation var(--orbit-spinner-duration, ${duration}s) linear infinite;
-        border-right: 3px solid var(--orbit-spinner-color, ${color});
+        animation: orbit-spinner-orbit-two-animation var(--orbit-spinner__duration, ${duration}s) linear infinite;
+        border-right: 3px solid var(--orbit-spinner__color, ${color});
         right: 0%;
         top: 0%;
       }
 
       .orbit-spinner .orbit:nth-child(3) {
-        animation: orbit-spinner-orbit-three-animation var(--orbit-spinner-duration, ${duration}s) linear infinite;
-        border-top: 3px solid var(--orbit-spinner-color, ${color});
+        animation: orbit-spinner-orbit-three-animation var(--orbit-spinner__duration, ${duration}s) linear infinite;
+        border-top: 3px solid var(--orbit-spinner__color, ${color});
         bottom: 0%;
         right: 0%;
       }

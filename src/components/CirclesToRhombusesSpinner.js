@@ -27,7 +27,7 @@ export class CirclesToRhombusesSpinner extends SpinnerElement {
     for (let i = 2; i <= count; i++) {
       circleStyles.push(`
         .circles-to-rhombuses-spinner .circle:nth-child(${i}) {
-          animation-delay: calc(var(--circles-to-rhombuses-spinner-duration, ${duration}s) / 8 * ${i});
+          animation-delay: calc(var(--circles-to-rhombuses-spinner__duration, ${duration}s) / 8 * ${i});
         }
       `);
     }
@@ -40,25 +40,25 @@ export class CirclesToRhombusesSpinner extends SpinnerElement {
       .circles-to-rhombuses-spinner {
         align-items: center;
         display: flex;
-        height: var(--circles-to-rhombuses-spinner-size, ${size}px);
+        height: var(--circles-to-rhombuses-spinner__size, ${size}px);
         justify-content: center
-        width: calc((var(--circles-to-rhombuses-spinner-size, ${size}px) + var(--circles-to-rhombuses-spinner-size, ${size}px) * 1.125) * ${count});
+        width: calc((var(--circles-to-rhombuses-spinner__size, ${size}px) + var(--circles-to-rhombuses-spinner__size, ${size}px) * 1.125) * ${count});
       }
 
       .circles-to-rhombuses-spinner .circle {
-        animation: circles-to-rhombuses-animation var(--circles-to-rhombuses-spinner-duration, ${duration}s) linear infinite;
+        animation: circles-to-rhombuses-animation var(--circles-to-rhombuses-spinner__duration, ${duration}s) linear infinite;
         background: transparent;
         border-radius: 10%;
-        border: 3px solid var(--circles-to-rhombuses-spinner-color, ${color});
-        height: var(--circles-to-rhombuses-spinner-size, ${size}px);
-        margin-left: calc(var(--circles-to-rhombuses-spinner-size, ${size}px) * 1.125);
+        border: 3px solid var(--circles-to-rhombuses-spinner__color, ${color});
+        height: var(--circles-to-rhombuses-spinner__size, ${size}px);
+        margin-left: calc(var(--circles-to-rhombuses-spinner__size, ${size}px) * 1.125);
         overflow: hidden;
         transform: rotate(45deg);
-        width: var(--circles-to-rhombuses-spinner-size, ${size}px);
+        width: var(--circles-to-rhombuses-spinner__size, ${size}px);
       }
 
       .circles-to-rhombuses-spinner .circle:nth-child(1) {
-        animation-delay: calc(var(--circles-to-rhombuses-spinner-duration, ${duration}s) / 8 * 1);
+        animation-delay: calc(var(--circles-to-rhombuses-spinner__duration, ${duration}s) / 8 * 1);
         margin-left: 0;
       }
 

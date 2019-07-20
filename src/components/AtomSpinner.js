@@ -22,9 +22,9 @@ export class AtomSpinner extends SpinnerElement {
   style({ color, duration, size }) {
     return `
       .atom-spinner {
-        height: var(--atom-spinner-size, ${size}px);
+        height: var(--atom-spinner__size, ${size}px);
         overflow: hidden;
-        width: var(--atom-spinner-size, ${size}px);
+        width: var(--atom-spinner__size, ${size}px);
       }
 
       .atom-spinner .spinner-inner {
@@ -35,9 +35,9 @@ export class AtomSpinner extends SpinnerElement {
       }
 
       .atom-spinner .spinner-circle {
-        color: var(--atom-spinner-color, ${color});
+        color: var(--atom-spinner__color, ${color});
         display: block;
-        font-size: calc(var(--atom-spinner-size, ${size}px) * 0.24);
+        font-size: calc(var(--atom-spinner__size, ${size}px) * 0.24);
         left: 50%;
         position: absolute;
         top: 50%;
@@ -45,26 +45,26 @@ export class AtomSpinner extends SpinnerElement {
       }
 
       .atom-spinner .spinner-line {
-        border-left: calc(var(--atom-spinner-size, ${size}px) / 25) solid var(--atom-spinner-color, ${color});
+        border-left: calc(var(--atom-spinner__size, ${size}px) / 25) solid var(--atom-spinner__color, ${color});
         border-radius: 50%;
-        border-top: calc(var(--atom-spinner-size, ${size}px) / 25) solid transparent;
+        border-top: calc(var(--atom-spinner__size, ${size}px) / 25) solid transparent;
         height: 100%;
         position: absolute;
         width: 100%;
       }
 
       .atom-spinner .spinner-line:nth-child(1) {
-        animation: atom-spinner-animation-1 var(--atom-spinner-duration, ${duration}s) linear infinite;
+        animation: atom-spinner-animation-1 var(--atom-spinner__duration, ${duration}s) linear infinite;
         transform: rotateZ(120deg) rotateX(66deg) rotateZ(0deg);
       }
 
       .atom-spinner .spinner-line:nth-child(2) {
-        animation: atom-spinner-animation-2 var(--atom-spinner-duration, ${duration}s) linear infinite;
+        animation: atom-spinner-animation-2 var(--atom-spinner__duration, ${duration}s) linear infinite;
         transform: rotateZ(240deg) rotateX(66deg) rotateZ(0deg);
       }
 
       .atom-spinner .spinner-line:nth-child(3) {
-        animation: atom-spinner-animation-3 var(--atom-spinner-duration, ${duration}s) linear infinite;
+        animation: atom-spinner-animation-3 var(--atom-spinner__duration, ${duration}s) linear infinite;
         transform: rotateZ(360deg) rotateX(66deg) rotateZ(0deg);
       }
 

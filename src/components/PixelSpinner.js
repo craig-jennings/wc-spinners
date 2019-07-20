@@ -25,14 +25,14 @@ export class PixelSpinner extends SpinnerElement {
         align-items: center;
         display: flex;
         flex-direction: row;
-        height: var(--pixel-spinner-size, ${size}px);
+        height: var(--pixel-spinner__size, ${size}px);
         justify-content: center;
-        width: var(--pixel-spinner-size, ${size}px);
+        width: var(--pixel-spinner__size, ${size}px);
       }
 
       .pixel-spinner .pixel-spinner-inner {
-        animation: pixel-spinner-animation var(--pixel-spinner-duration, ${duration}s) linear infinite;
-        background-color: var(--pixel-spinner-color, ${color});
+        animation: pixel-spinner-animation var(--pixel-spinner__duration, ${duration}s) linear infinite;
+        background-color: var(--pixel-spinner__color, ${color});
         box-shadow: 15px 15px  0 0,
                     -15px -15px  0 0,
                     15px -15px  0 0,
@@ -41,9 +41,9 @@ export class PixelSpinner extends SpinnerElement {
                     15px 0  0 0,
                     -15px 0  0 0,
                     0 -15px 0 0;
-        color: var(--pixel-spinner-color, ${color});
-        height: calc(var(--pixel-spinner-size, ${size}px) / 7);
-        width: calc(var(--pixel-spinner-size, ${size}px) / 7);
+        color: var(--pixel-spinner__color, ${color});
+        height: calc(var(--pixel-spinner__size, ${size}px) / 7);
+        width: calc(var(--pixel-spinner__size, ${size}px) / 7);
       }
 
       @keyframes pixel-spinner-animation {

@@ -22,20 +22,20 @@ export class FulfillingSquareSpinner extends SpinnerElement {
   style({ color, duration, size }) {
     return `
       .fulfilling-square-spinner {
-        height: var(--fulfilling-square-spinner-size, ${size}px);
-        width: var(--fulfilling-square-spinner-size, ${size}px);
+        height: var(--fulfilling-square-spinner__size, ${size}px);
+        width: var(--fulfilling-square-spinner__size, ${size}px);
         position: relative;
-        border: 4px solid var(--fulfilling-square-spinner-color, ${color});
-        animation: fulfilling-square-spinner-animation var(--fulfilling-square-spinner-duration, ${duration}s) infinite ease;
+        border: 4px solid var(--fulfilling-square-spinner__color, ${color});
+        animation: fulfilling-square-spinner-animation var(--fulfilling-square-spinner__duration, ${duration}s) infinite ease;
       }
 
       .fulfilling-square-spinner .spinner-inner {
         vertical-align: top;
         display: inline-block;
-        background-color: var(--fulfilling-square-spinner-color, ${color});
+        background-color: var(--fulfilling-square-spinner__color, ${color});
         width: 100%;
         opacity: 1;
-        animation: fulfilling-square-spinner-inner-animation var(--fulfilling-square-spinner-duration, ${duration}s) infinite ease-in;
+        animation: fulfilling-square-spinner-inner-animation var(--fulfilling-square-spinner__duration, ${duration}s) infinite ease-in;
       }
 
       @keyframes fulfilling-square-spinner-animation {

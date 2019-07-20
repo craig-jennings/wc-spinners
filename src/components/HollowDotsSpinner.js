@@ -27,7 +27,7 @@ export class HollowDotsSpinner extends SpinnerElement {
     for (let i = 1; i <= count; i++) {
       dotStyles.push(`
         .hollow-dots-spinner .dot:nth-child(${i}) {
-          animation-delay: calc(var(--hollow-dots-spinner-duration, ${duration}s) / ${count} * ${i});
+          animation-delay: calc(var(--hollow-dots-spinner__duration, ${duration}s) / ${count} * ${i});
         }
       `);
     }
@@ -42,19 +42,19 @@ export class HollowDotsSpinner extends SpinnerElement {
       }
 
       .hollow-dots-spinner {
-        height: var(--hollow-dots-spinner-size, ${size}px);
-        width: calc(var(--hollow-dots-spinner-size, ${size}px) * 2 * ${count});
+        height: var(--hollow-dots-spinner__size, ${size}px);
+        width: calc(var(--hollow-dots-spinner__size, ${size}px) * 2 * ${count});
       }
 
       .hollow-dots-spinner .dot {
-        animation: hollow-dots-spinner-animation var(--hollow-dots-spinner-duration, ${duration}s) ease infinite 0ms;
+        animation: hollow-dots-spinner-animation var(--hollow-dots-spinner__duration, ${duration}s) ease infinite 0ms;
         border-radius: 50%;
-        border: calc(var(--hollow-dots-spinner-size, ${size}px) / 5) solid var(--hollow-dots-spinner-color, ${color});
+        border: calc(var(--hollow-dots-spinner__size, ${size}px) / 5) solid var(--hollow-dots-spinner__color, ${color});
         float: left;
-        height: var(--hollow-dots-spinner-size, ${size}px);
-        margin: 0 calc(var(--hollow-dots-spinner-size, ${size}px) / 2);
+        height: var(--hollow-dots-spinner__size, ${size}px);
+        margin: 0 calc(var(--hollow-dots-spinner__size, ${size}px) / 2);
         transform: scale(0);
-        width: var(--hollow-dots-spinner-size, ${size}px);
+        width: var(--hollow-dots-spinner__size, ${size}px);
       }
 
       ${dotStyles.join('')}

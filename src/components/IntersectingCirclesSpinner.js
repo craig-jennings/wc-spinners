@@ -22,8 +22,8 @@ export class IntersectingCirclesSpinner extends SpinnerElement {
   style({ color, duration, size }) {
     return `
       .intersecting-circles-spinner {
-        height: calc(var(--intersecting-circles-spinner-size, ${size}px) * 2);
-        width: calc(var(--intersecting-circles-spinner-size, ${size}px) * 2);
+        height: calc(var(--intersecting-circles-spinner__size, ${size}px) * 2);
+        width: calc(var(--intersecting-circles-spinner__size, ${size}px) * 2);
         position: relative;
         display: flex;
         flex-direction: row;
@@ -32,16 +32,16 @@ export class IntersectingCirclesSpinner extends SpinnerElement {
       }
 
       .intersecting-circles-spinner .spinnerBlock {
-        animation: intersecting-circles-spinners-animation var(--intersecting-circles-spinner-duration, ${duration}s) linear infinite;
+        animation: intersecting-circles-spinners-animation var(--intersecting-circles-spinner__duration, ${duration}s) linear infinite;
         transform-origin: center;
         display: block;
-        height: var(--intersecting-circles-spinner-size, ${size}px);
-        width: var(--intersecting-circles-spinner-size, ${size}px);
+        height: var(--intersecting-circles-spinner__size, ${size}px);
+        width: var(--intersecting-circles-spinner__size, ${size}px);
       }
 
       .intersecting-circles-spinner .circle {
         display: block;
-        border: 2px solid var(--intersecting-circles-spinner-color, ${color});
+        border: 2px solid var(--intersecting-circles-spinner__color, ${color});
         border-radius: 50%;
         height: 100%;
         width: 100%;
@@ -56,33 +56,33 @@ export class IntersectingCirclesSpinner extends SpinnerElement {
       }
 
       .intersecting-circles-spinner .circle:nth-child(2) {
-        left: calc(var(--intersecting-circles-spinner-size, ${size}px) * -0.36);
-        top: calc(var(--intersecting-circles-spinner-size, ${size}px) * 0.2);
+        left: calc(var(--intersecting-circles-spinner__size, ${size}px) * -0.36);
+        top: calc(var(--intersecting-circles-spinner__size, ${size}px) * 0.2);
       }
 
       .intersecting-circles-spinner .circle:nth-child(3) {
-        left: calc(var(--intersecting-circles-spinner-size, ${size}px) * -0.36);
-        top: calc(var(--intersecting-circles-spinner-size, ${size}px) * -0.2);
+        left: calc(var(--intersecting-circles-spinner__size, ${size}px) * -0.36);
+        top: calc(var(--intersecting-circles-spinner__size, ${size}px) * -0.2);
       }
 
       .intersecting-circles-spinner .circle:nth-child(4) {
         left: 0;
-        top: calc(var(--intersecting-circles-spinner-size, ${size}px) * -0.36);
+        top: calc(var(--intersecting-circles-spinner__size, ${size}px) * -0.36);
       }
 
       .intersecting-circles-spinner .circle:nth-child(5) {
-        left: calc(var(--intersecting-circles-spinner-size, ${size}px) * 0.36);
-        top: calc(var(--intersecting-circles-spinner-size, ${size}px) * -0.2);
+        left: calc(var(--intersecting-circles-spinner__size, ${size}px) * 0.36);
+        top: calc(var(--intersecting-circles-spinner__size, ${size}px) * -0.2);
       }
 
       .intersecting-circles-spinner .circle:nth-child(6) {
-        left: calc(var(--intersecting-circles-spinner-size, ${size}px) * 0.36);
-        top: calc(var(--intersecting-circles-spinner-size, ${size}px) * 0.2);
+        left: calc(var(--intersecting-circles-spinner__size, ${size}px) * 0.36);
+        top: calc(var(--intersecting-circles-spinner__size, ${size}px) * 0.2);
       }
 
       .intersecting-circles-spinner .circle:nth-child(7) {
         left: 0;
-        top: calc(var(--intersecting-circles-spinner-size, ${size}px) * 0.36);
+        top: calc(var(--intersecting-circles-spinner__size, ${size}px) * 0.36);
       }
 
       @keyframes intersecting-circles-spinners-animation {

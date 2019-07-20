@@ -25,41 +25,41 @@ export class TrinityRingsSpinner extends SpinnerElement {
         align-items: center;
         display: flex;
         flex-direction: row;
-        height: calc(var(--trinity-rings-spinner-size, ${size}px) * 2);
+        height: calc(var(--trinity-rings-spinner__size, ${size}px) * 2);
         justify-content: center;
         overflow: hidden;
         padding: 3px;
         position: relative;
-        width: calc(var(--trinity-rings-spinner-size, ${size}px) * 2);
+        width: calc(var(--trinity-rings-spinner__size, ${size}px) * 2);
       }
 
       .trinity-rings-spinner .circle {
         border-radius: 50%;
-        border: 3px solid var(--trinity-rings-spinner-color, ${color});
+        border: 3px solid var(--trinity-rings-spinner__color, ${color});
         display: block;
         opacity: 1;
         position: absolute;
       }
 
       .trinity-rings-spinner .circle:nth-child(1) {
-        animation: trinity-rings-spinner-circle1-animation var(--trinity-rings-spinner-duration, ${duration}s) infinite linear;
+        animation: trinity-rings-spinner-circle1-animation var(--trinity-rings-spinner__duration, ${duration}s) infinite linear;
         border-width: 3px;
-        height: var(--trinity-rings-spinner-size, ${size}px);
-        width: var(--trinity-rings-spinner-size, ${size}px);
+        height: var(--trinity-rings-spinner__size, ${size}px);
+        width: var(--trinity-rings-spinner__size, ${size}px);
       }
 
       .trinity-rings-spinner .circle:nth-child(2) {
-        animation: trinity-rings-spinner-circle2-animation var(--trinity-rings-spinner-duration, ${duration}s) infinite linear;
+        animation: trinity-rings-spinner-circle2-animation var(--trinity-rings-spinner__duration, ${duration}s) infinite linear;
         border-width: 2px;
-        height: calc(var(--trinity-rings-spinner-size, ${size}px) * 0.65);
-        width: calc(var(--trinity-rings-spinner-size, ${size}px) * 0.65);
+        height: calc(var(--trinity-rings-spinner__size, ${size}px) * 0.65);
+        width: calc(var(--trinity-rings-spinner__size, ${size}px) * 0.65);
       }
 
       .trinity-rings-spinner .circle:nth-child(3) {
-        animation:trinity-rings-spinner-circle3-animation var(--trinity-rings-spinner-duration, ${duration}s) infinite linear;
+        animation:trinity-rings-spinner-circle3-animation var(--trinity-rings-spinner__duration, ${duration}s) infinite linear;
         border-width: 1px;
-        height: calc(var(--trinity-rings-spinner-size, ${size}px) * 0.1);
-        width: calc(var(--trinity-rings-spinner-size, ${size}px) * 0.1);
+        height: calc(var(--trinity-rings-spinner__size, ${size}px) * 0.1);
+        width: calc(var(--trinity-rings-spinner__size, ${size}px) * 0.1);
       }
 
       @keyframes trinity-rings-spinner-circle1-animation{

@@ -25,25 +25,25 @@ export class SwappingSquaresSpinner extends SpinnerElement {
         align-items: center;
         display: flex;
         flex-direction: row;
-        height: var(--swapping-squares-spinner-size, ${size}px);
+        height: var(--swapping-squares-spinner__size, ${size}px);
         justify-content: center;
         position: relative;
-        width: var(--swapping-squares-spinner-size, ${size}px);
+        width: var(--swapping-squares-spinner__size, ${size}px);
       }
 
       .swapping-squares-spinner .square {
-        animation-duration: var(--swapping-squares-spinner-duration, ${duration}s);
+        animation-duration: var(--swapping-squares-spinner__duration, ${duration}s);
         animation-iteration-count: infinite;
-        border: calc(var(--swapping-squares-spinner-size, ${size}px) * 0.04 / 1.3) solid var(--swapping-squares-spinner-color, ${color});
-        height: calc(var(--swapping-squares-spinner-size, ${size}px) * 0.25 / 1.3);
+        border: calc(var(--swapping-squares-spinner__size, ${size}px) * 0.04 / 1.3) solid var(--swapping-squares-spinner__color, ${color});
+        height: calc(var(--swapping-squares-spinner__size, ${size}px) * 0.25 / 1.3);
         margin-left: auto;
         margin-right: auto;
         position: absolute;
-        width: calc(var(--swapping-squares-spinner-size, ${size}px) * 0.25 / 1.3);
+        width: calc(var(--swapping-squares-spinner__size, ${size}px) * 0.25 / 1.3);
       }
 
       .swapping-squares-spinner .square:nth-child(1) {
-        animation-delay: calc(var(--swapping-squares-spinner-duration, ${duration}s) / 2);
+        animation-delay: calc(var(--swapping-squares-spinner__duration, ${duration}s) / 2);
         animation-name: swapping-squares-animation-child-1;
       }
 
@@ -53,7 +53,7 @@ export class SwappingSquaresSpinner extends SpinnerElement {
       }
 
       .swapping-squares-spinner .square:nth-child(3) {
-        animation-delay: calc(var(--swapping-squares-spinner-duration, ${duration}s) / 2);
+        animation-delay: calc(var(--swapping-squares-spinner__duration, ${duration}s) / 2);
         animation-name: swapping-squares-animation-child-3;
       }
 
