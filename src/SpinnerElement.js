@@ -16,13 +16,15 @@ class SpinnerElement extends HTMLElement {
     this.update();
   }
 
+  style() {
+    throw new Error('style method must be implemented');
+  }
+
   template() {
-    throw new Error('template(props) must be implemented');
+    throw new Error('template method must be implemented');
   }
 
   update() {
-    const template = this.template(this.props);
-
     const styles = `
       <style>
         * { box-sizing: border-box; }
@@ -33,6 +35,8 @@ class SpinnerElement extends HTMLElement {
         ${this.style(this.props)}
       </style>
     `;
+
+    const template = this.template(this.props);
 
     this.root.innerHTML = `${styles}${template}`;
   }

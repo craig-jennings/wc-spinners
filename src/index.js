@@ -19,3 +19,17 @@ import './components/semipolar-spinner.js';
 import './components/spring-spinner.js';
 import './components/swapping-squares-spinner.js';
 import './components/trinity-rings-spinner.js';
+
+// React Spinners
+import './components/bar-spinner.js';
+import './components/beat-spinner.js';
+import './components/bounce-spinner.js';
+import './components/circle-spinner.js';
+import './components/climbing-box-spinner.js';
+import './components/clip-spinner.js';
+import './components/dot-spinner.js';
+import './components/fade-spinner.js';
+import './components/grid-spinner.js';
+import './components/hash-spinner.js';
+import './components/moon-spinner.js';
+import './components/pacman-spinner.js';
