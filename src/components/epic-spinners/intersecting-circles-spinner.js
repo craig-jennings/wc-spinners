@@ -32,7 +32,7 @@ export class IntersectingCirclesSpinner extends SpinnerElement {
       }
 
       .intersecting-circles-spinner .spinnerBlock {
-        animation: intersecting-circles-spinners-animation var(--intersecting-circles-spinner__duration, ${duration}s) linear infinite;
+        animation: intersecting-circles-spinner-animation var(--intersecting-circles-spinner__duration, ${duration}s) linear infinite;
         transform-origin: center;
         display: block;
         height: var(--intersecting-circles-spinner__size, ${size}px);
@@ -85,7 +85,7 @@ export class IntersectingCirclesSpinner extends SpinnerElement {
         top: calc(var(--intersecting-circles-spinner__size, ${size}px) * 0.36);
       }
 
-      @keyframes intersecting-circles-spinners-animation {
+      @keyframes intersecting-circles-spinner-animation {
         from { transform: rotate(0deg); }
         to   { transform: rotate(360deg); }
       }
