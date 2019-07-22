@@ -1,6 +1,5 @@
 import SpinnerElement from '../../SpinnerElement.js';
 
-// TODO: Improve styling
 export class ClimbingBoxSpinner extends SpinnerElement {
   static get is() { return 'climbing-box-spinner'; }
 
@@ -37,6 +36,7 @@ export class ClimbingBoxSpinner extends SpinnerElement {
         border-radius: 15%;
         border: 0.25em solid ${this.color};
         bottom: -0.1em;
+        box-sizing: content-box;
         height: 1em;
         left: 0;
         position: absolute;
