@@ -19,11 +19,17 @@ export class BreedingRhombusSpinner extends SpinnerElement {
     ];
   }
 
-  style({ color, duration, size }) {
+  get color() { return `var(--breeding-rhombus-spinner__color, ${this.props.color})`; }
+
+  get duration() { return `var(--breeding-rhombus-spinner__duration, ${this.props.duration}s)`; }
+
+  get size() { return `var(--breeding-rhombus-spinner__size, ${this.props.size}px)`; }
+
+  style() {
     return `
       .breeding-rhombus-spinner {
-        height: var(--breeding-rhombus-spinner__size, ${size}px);
-        width: var(--breeding-rhombus-spinner__size, ${size}px);
+        height: ${this.size};
+        width: ${this.size};
         position: relative;
         transform: rotate(45deg);
       }
@@ -33,14 +39,14 @@ export class BreedingRhombusSpinner extends SpinnerElement {
       }
 
       .breeding-rhombus-spinner .rhombus {
-        animation-duration: var(--breeding-rhombus-spinner__duration, ${duration}s);
+        animation-duration: ${this.duration};
         animation-iteration-count: infinite;
-        background-color: var(--breeding-rhombus-spinner__color, ${color});
-        height: calc(var(--breeding-rhombus-spinner__size, ${size}px) / 7.5);
-        left: calc(var(--breeding-rhombus-spinner__size, ${size}px) / 2.3077);
+        background-color: ${this.color};
+        height: calc(${this.size} / 7.5);
+        left: calc(${this.size} / 2.3077);
         position: absolute;
-        top: calc(var(--breeding-rhombus-spinner__size, ${size}px) / 2.3077);
-        width: calc(var(--breeding-rhombus-spinner__size, ${size}px) / 7.5);
+        top: calc(${this.size} / 2.3077);
+        width: calc(${this.size} / 7.5);
       }
 
       .breeding-rhombus-spinner .rhombus:nth-child(2n+0) {
@@ -89,12 +95,12 @@ export class BreedingRhombusSpinner extends SpinnerElement {
 
       .breeding-rhombus-spinner .rhombus.big {
         animation-delay: 0.5s;
-        animation: breeding-rhombus-spinner-animation-child-big var(--breeding-rhombus-spinner__duration, ${duration}s) infinite;
-        background-color: var(--breeding-rhombus-spinner__color, ${color});
-        height: calc(var(--breeding-rhombus-spinner__size, ${size}px) / 3);
-        left: calc(var(--breeding-rhombus-spinner__size, ${size}px) / 3);
-        top: calc(var(--breeding-rhombus-spinner__size, ${size}px) / 3);
-        width: calc(var(--breeding-rhombus-spinner__size, ${size}px) / 3);
+        animation: breeding-rhombus-spinner-animation-child-big ${this.duration} infinite;
+        background-color: ${this.color};
+        height: calc(${this.size} / 3);
+        left: calc(${this.size} / 3);
+        top: calc(${this.size} / 3);
+        width: calc(${this.size} / 3);
       }
 
       @keyframes breeding-rhombus-spinner-animation-child-1 {

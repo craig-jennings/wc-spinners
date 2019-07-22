@@ -21,13 +21,19 @@ export class CirclesToRhombusesSpinner extends SpinnerElement {
     ];
   }
 
-  style({ color, count, duration, size }) { // eslint-disable-line object-curly-newline
+  get color() { return `var(--circles-to-rhombuses-spinner__color, ${this.props.color})`; }
+
+  get duration() { return `var(--circles-to-rhombuses-spinner__duration, ${this.props.duration}s)`; }
+
+  get size() { return `var(--circles-to-rhombuses-spinner__size, ${this.props.size}px)`; }
+
+  style({ count }) {
     const circleStyles = [];
 
     for (let i = 2; i <= count; i++) {
       circleStyles.push(`
         .circles-to-rhombuses-spinner .circle:nth-child(${i}) {
-          animation-delay: calc(var(--circles-to-rhombuses-spinner__duration, ${duration}s) / 8 * ${i});
+          animation-delay: calc(${this.duration} / 8 * ${i});
         }
       `);
     }
@@ -40,25 +46,25 @@ export class CirclesToRhombusesSpinner extends SpinnerElement {
       .circles-to-rhombuses-spinner {
         align-items: center;
         display: flex;
-        height: var(--circles-to-rhombuses-spinner__size, ${size}px);
+        height: ${this.size};
         justify-content: center
-        width: calc((var(--circles-to-rhombuses-spinner__size, ${size}px) + var(--circles-to-rhombuses-spinner__size, ${size}px) * 1.125) * ${count});
+        width: calc((${this.size} + ${this.size} * 1.125) * ${count});
       }
 
       .circles-to-rhombuses-spinner .circle {
-        animation: circles-to-rhombuses-animation var(--circles-to-rhombuses-spinner__duration, ${duration}s) linear infinite;
+        animation: circles-to-rhombuses-animation ${this.duration} linear infinite;
         background: transparent;
         border-radius: 10%;
-        border: 3px solid var(--circles-to-rhombuses-spinner__color, ${color});
-        height: var(--circles-to-rhombuses-spinner__size, ${size}px);
-        margin-left: calc(var(--circles-to-rhombuses-spinner__size, ${size}px) * 1.125);
+        border: 3px solid ${this.color};
+        height: ${this.size};
+        margin-left: calc(${this.size} * 1.125);
         overflow: hidden;
         transform: rotate(45deg);
-        width: var(--circles-to-rhombuses-spinner__size, ${size}px);
+        width: ${this.size};
       }
 
       .circles-to-rhombuses-spinner .circle:nth-child(1) {
-        animation-delay: calc(var(--circles-to-rhombuses-spinner__duration, ${duration}s) / 8 * 1);
+        animation-delay: calc(${this.duration} / 8 * 1);
         margin-left: 0;
       }
 

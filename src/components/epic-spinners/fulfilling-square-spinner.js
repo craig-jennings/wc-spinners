@@ -19,23 +19,29 @@ export class FulfillingSquareSpinner extends SpinnerElement {
     ];
   }
 
-  style({ color, duration, size }) {
+  get color() { return `var(--fulfilling-square-spinner__color, ${this.props.color})`; }
+
+  get duration() { return `var(--fulfilling-square-spinner__duration, ${this.props.duration}s)`; }
+
+  get size() { return `var(--fulfilling-square-spinner__size, ${this.props.size}px)`; }
+
+  style() {
     return `
       .fulfilling-square-spinner {
-        height: var(--fulfilling-square-spinner__size, ${size}px);
-        width: var(--fulfilling-square-spinner__size, ${size}px);
+        height: ${this.size};
+        width: ${this.size};
         position: relative;
-        border: 4px solid var(--fulfilling-square-spinner__color, ${color});
-        animation: fulfilling-square-spinner-animation var(--fulfilling-square-spinner__duration, ${duration}s) infinite ease;
+        border: 4px solid ${this.color};
+        animation: fulfilling-square-spinner-animation ${this.duration} infinite ease;
       }
 
       .fulfilling-square-spinner .spinner-inner {
         vertical-align: top;
         display: inline-block;
-        background-color: var(--fulfilling-square-spinner__color, ${color});
+        background-color: ${this.color};
         width: 100%;
         opacity: 1;
-        animation: fulfilling-square-spinner-inner-animation var(--fulfilling-square-spinner__duration, ${duration}s) infinite ease-in;
+        animation: fulfilling-square-spinner-inner-animation ${this.duration} infinite ease-in;
       }
 
       @keyframes fulfilling-square-spinner-animation {

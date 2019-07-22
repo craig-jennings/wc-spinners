@@ -19,36 +19,42 @@ export class FulfillingBouncingCircleSpinner extends SpinnerElement {
     ];
   }
 
-  style({ color, duration, size }) {
+  get color() { return `var(--fulfilling-bouncing-circle-spinner__color, ${this.props.color})`; }
+
+  get duration() { return `var(--fulfilling-bouncing-circle-spinner__duration, ${this.props.duration}s)`; }
+
+  get size() { return `var(--fulfilling-bouncing-circle-spinner__size, ${this.props.size}px)`; }
+
+  style() {
     return `
       .fulfilling-bouncing-circle-spinner {
-        animation: fulfilling-bouncing-circle-spinner-animation infinite var(--fulfilling-bouncing-circle-spinner__duration, ${duration}s) ease;
-        height: var(--fulfilling-bouncing-circle-spinner__size, ${size}px);
+        animation: fulfilling-bouncing-circle-spinner-animation infinite ${this.duration} ease;
+        height: ${this.size};
         position: relative;
-        width: var(--fulfilling-bouncing-circle-spinner__size, ${size}px);
+        width: ${this.size};
       }
 
       .fulfilling-bouncing-circle-spinner .orbit {
-        animation: fulfilling-bouncing-circle-spinner-orbit-animation infinite var(--fulfilling-bouncing-circle-spinner__duration, ${duration}s) ease;
+        animation: fulfilling-bouncing-circle-spinner-orbit-animation infinite ${this.duration} ease;
         border-radius: 50%;
-        border: calc(var(--fulfilling-bouncing-circle-spinner__size, ${size}px) * 0.03) solid var(--fulfilling-bouncing-circle-spinner__color, ${color});
-        height: var(--fulfilling-bouncing-circle-spinner__size, ${size}px);
+        border: calc(${this.size} * 0.03) solid ${this.color};
+        height: ${this.size};
         left: 0;
         position: absolute;
         top: 0;
-        width: var(--fulfilling-bouncing-circle-spinner__size, ${size}px);
+        width: ${this.size};
       }
 
       .fulfilling-bouncing-circle-spinner .circle {
-        animation: fulfilling-bouncing-circle-spinner-circle-animation infinite var(--fulfilling-bouncing-circle-spinner__duration, ${duration}s) ease;
+        animation: fulfilling-bouncing-circle-spinner-circle-animation infinite ${this.duration} ease;
         border-radius: 50%;
-        border: calc(var(--fulfilling-bouncing-circle-spinner__size, ${size}px) * 0.1) solid var(--fulfilling-bouncing-circle-spinner__color, ${color});
-        color: var(--fulfilling-bouncing-circle-spinner__color, ${color});
+        border: calc(${this.size} * 0.1) solid ${this.color};
+        color: ${this.color};
         display: block;
-        height: var(--fulfilling-bouncing-circle-spinner__size, ${size}px);
+        height: ${this.size};
         position: relative;
         transform: rotate(0deg) scale(1);
-        width: var(--fulfilling-bouncing-circle-spinner__size, ${size}px);
+        width: ${this.size};
       }
 
       @keyframes fulfilling-bouncing-circle-spinner-animation {

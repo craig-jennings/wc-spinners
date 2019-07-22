@@ -19,16 +19,22 @@ export class RadarSpinner extends SpinnerElement {
     ];
   }
 
-  style({ color, duration, size }) {
+  get color() { return `var(--radar-spinner__color, ${this.props.color})`; }
+
+  get duration() { return `var(--radar-spinner__duration, ${this.props.duration}s)`; }
+
+  get size() { return `var(--radar-spinner__size, ${this.props.size}px)`; }
+
+  style() {
     return `
       .radar-spinner {
-        height: var(--radar-spinner__size, ${size}px);
+        height: ${this.size};
         position: relative;
-        width: var(--radar-spinner__size, ${size}px);
+        width: ${this.size};
       }
 
       .radar-spinner .circle {
-        animation: radar-spinner-animation var(--radar-spinner__duration, ${duration}s) infinite;
+        animation: radar-spinner-animation ${this.duration} infinite;
         height: 100%;
         left: 0;
         position: absolute;
@@ -37,35 +43,35 @@ export class RadarSpinner extends SpinnerElement {
       }
 
       .radar-spinner .circle:nth-child(1) {
-        animation-delay: calc(var(--radar-spinner__duration, ${duration}s) / 6.67);
-        padding: calc(var(--radar-spinner__size, ${size}px) * 5 * 2 * 0 / 110);
+        animation-delay: calc(${this.duration} / 6.67);
+        padding: calc(${this.size} * 5 * 2 * 0 / 110);
       }
 
       .radar-spinner .circle:nth-child(2) {
-        animation-delay: calc(var(--radar-spinner__duration, ${duration}s) / 6.67);
-        padding: calc(var(--radar-spinner__size, ${size}px) * 5 * 2 * 1 / 110);
+        animation-delay: calc(${this.duration} / 6.67);
+        padding: calc(${this.size} * 5 * 2 * 1 / 110);
       }
 
       .radar-spinner .circle:nth-child(3) {
-        animation-delay: calc(var(--radar-spinner__duration, ${duration}s) / 6.67);
-        padding: calc(var(--radar-spinner__size, ${size}px) * 5 * 2 * 2 / 110);
+        animation-delay: calc(${this.duration} / 6.67);
+        padding: calc(${this.size} * 5 * 2 * 2 / 110);
       }
 
       .radar-spinner .circle:nth-child(4) {
         animation-delay: 0ms;
-        padding: calc(var(--radar-spinner__size, ${size}px) * 5 * 2 * 3 / 110);
+        padding: calc(${this.size} * 5 * 2 * 3 / 110);
       }
 
       .radar-spinner .circle-inner, .radar-spinner .circle-inner-container {
         border-radius: 50%;
-        border: calc(var(--radar-spinner__size, ${size}px) * 5 / 110) solid transparent;
+        border: calc(${this.size} * 5 / 110) solid transparent;
         height: 100%;
         width: 100%;
       }
 
       .radar-spinner .circle-inner {
-        border-left-color: var(--radar-spinner__color, ${color});
-        border-right-color: var(--radar-spinner__color, ${color});
+        border-left-color: ${this.color};
+        border-right-color: ${this.color};
       }
 
       @keyframes radar-spinner-animation {

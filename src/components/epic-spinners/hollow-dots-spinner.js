@@ -21,13 +21,19 @@ export class HollowDotsSpinner extends SpinnerElement {
     ];
   }
 
-  style({ color, duration, count, size }) { // eslint-disable-line object-curly-newline
+  get color() { return `var(--hollow-dots-spinner__color, ${this.props.color})`; }
+
+  get duration() { return `var(--hollow-dots-spinner__duration, ${this.props.duration}s)`; }
+
+  get size() { return `var(--hollow-dots-spinner__size, ${this.props.size}px)`; }
+
+  style({ count }) {
     const dotStyles = [];
 
     for (let i = 1; i <= count; i++) {
       dotStyles.push(`
         .hollow-dots-spinner .dot:nth-child(${i}) {
-          animation-delay: calc(var(--hollow-dots-spinner__duration, ${duration}s) / ${count} * ${i});
+          animation-delay: calc(${this.duration} / ${count} * ${i});
         }
       `);
     }
@@ -42,19 +48,19 @@ export class HollowDotsSpinner extends SpinnerElement {
       }
 
       .hollow-dots-spinner {
-        height: var(--hollow-dots-spinner__size, ${size}px);
-        width: calc(var(--hollow-dots-spinner__size, ${size}px) * 2 * ${count});
+        height: ${this.size};
+        width: calc(${this.size} * 2 * ${count});
       }
 
       .hollow-dots-spinner .dot {
-        animation: hollow-dots-spinner-animation var(--hollow-dots-spinner__duration, ${duration}s) ease infinite 0ms;
+        animation: hollow-dots-spinner-animation ${this.duration} ease infinite 0ms;
         border-radius: 50%;
-        border: calc(var(--hollow-dots-spinner__size, ${size}px) / 5) solid var(--hollow-dots-spinner__color, ${color});
+        border: calc(${this.size} / 5) solid ${this.color};
         float: left;
-        height: var(--hollow-dots-spinner__size, ${size}px);
-        margin: 0 calc(var(--hollow-dots-spinner__size, ${size}px) / 2);
+        height: ${this.size};
+        margin: 0 calc(${this.size} / 2);
         transform: scale(0);
-        width: var(--hollow-dots-spinner__size, ${size}px);
+        width: ${this.size};
       }
 
       ${dotStyles.join('')}

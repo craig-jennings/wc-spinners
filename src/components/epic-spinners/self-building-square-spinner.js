@@ -19,60 +19,66 @@ export class SelfBuildingSquareSpinner extends SpinnerElement {
     ];
   }
 
-  style({ color, duration, size }) {
+  get color() { return `var(--self-building-square-spinner__color, ${this.props.color})`; }
+
+  get duration() { return `var(--self-building-square-spinner__duration, ${this.props.duration}s)`; }
+
+  get size() { return `var(--self-building-square-spinner__size, ${this.props.size}px)`; }
+
+  style() {
     return `
       .self-building-square-spinner {
-        height: calc(var(--self-building-square-spinner__size, ${size}px) * 4);
-        top: calc(var(--self-building-square-spinner__size, ${size}px) * 2 / 3);
-        width: calc(var(--self-building-square-spinner__size, ${size}px) * 4);
+        height: calc(${this.size} * 4);
+        top: calc(${this.size} * 2 / 3);
+        width: calc(${this.size} * 4);
       }
       .self-building-square-spinner .square {
-        animation: self-building-square-spinner var(--self-building-square-spinner__duration, ${duration}s) infinite;
-        background: var(--self-building-square-spinner__color, ${color});
+        animation: self-building-square-spinner ${this.duration} infinite;
+        background: ${this.color};
         float: left;
-        height: var(--self-building-square-spinner__size, ${size}px);
-        margin-right: calc(var(--self-building-square-spinner__size, ${size}px) / 3);
-        margin-top: calc(var(--self-building-square-spinner__size, ${size}px) / 3);
+        height: ${this.size};
+        margin-right: calc(${this.size} / 3);
+        margin-top: calc(${this.size} / 3);
         opacity: 0;
         position:relative;
-        top: calc(var(--self-building-square-spinner__size, ${size}px) * -2 / 3);
-        width: var(--self-building-square-spinner__size, ${size}px);
+        top: calc(${this.size} * -2 / 3);
+        width: ${this.size};
       }
 
       .self-building-square-spinner .square:nth-child(1) {
-        animation-delay: calc(var(--self-building-square-spinner__duration, ${duration}s) / 20 * 6);
+        animation-delay: calc(${this.duration} / 20 * 6);
       }
 
       .self-building-square-spinner .square:nth-child(2) {
-        animation-delay: calc(var(--self-building-square-spinner__duration, ${duration}s) / 20 * 7);
+        animation-delay: calc(${this.duration} / 20 * 7);
       }
 
       .self-building-square-spinner .square:nth-child(3) {
-        animation-delay: calc(var(--self-building-square-spinner__duration, ${duration}s) / 20 * 8);
+        animation-delay: calc(${this.duration} / 20 * 8);
       }
 
       .self-building-square-spinner .square:nth-child(4) {
-        animation-delay: calc(var(--self-building-square-spinner__duration, ${duration}s) / 20 * 3);
+        animation-delay: calc(${this.duration} / 20 * 3);
       }
 
       .self-building-square-spinner .square:nth-child(5) {
-        animation-delay: calc(var(--self-building-square-spinner__duration, ${duration}s) / 20 * 4);
+        animation-delay: calc(${this.duration} / 20 * 4);
       }
 
       .self-building-square-spinner .square:nth-child(6) {
-        animation-delay: calc(var(--self-building-square-spinner__duration, ${duration}s) / 20 * 5);
+        animation-delay: calc(${this.duration} / 20 * 5);
       }
 
       .self-building-square-spinner .square:nth-child(7) {
-        animation-delay: calc(var(--self-building-square-spinner__duration, ${duration}s) / 20 * 0);
+        animation-delay: calc(${this.duration} / 20 * 0);
       }
 
       .self-building-square-spinner .square:nth-child(8) {
-        animation-delay: calc(var(--self-building-square-spinner__duration, ${duration}s) / 20 * 1);
+        animation-delay: calc(${this.duration} / 20 * 1);
       }
 
       .self-building-square-spinner .square:nth-child(9) {
-        animation-delay: calc(var(--self-building-square-spinner__duration, ${duration}s) / 20 * 2);
+        animation-delay: calc(${this.duration} / 20 * 2);
       }
 
       .self-building-square-spinner .clear {

@@ -19,20 +19,26 @@ export class PixelSpinner extends SpinnerElement {
     ];
   }
 
-  style({ color, duration, size }) {
+  get color() { return `var(--pixel-spinner__color, ${this.props.color})`; }
+
+  get duration() { return `var(--pixel-spinner__duration, ${this.props.duration}s)`; }
+
+  get size() { return `var(--pixel-spinner__size, ${this.props.size}px)`; }
+
+  style() {
     return `
       .pixel-spinner {
         align-items: center;
         display: flex;
         flex-direction: row;
-        height: var(--pixel-spinner__size, ${size}px);
+        height: ${this.size};
         justify-content: center;
-        width: var(--pixel-spinner__size, ${size}px);
+        width: ${this.size};
       }
 
       .pixel-spinner .pixel-spinner-inner {
-        animation: pixel-spinner-animation var(--pixel-spinner__duration, ${duration}s) linear infinite;
-        background-color: var(--pixel-spinner__color, ${color});
+        animation: pixel-spinner-animation ${this.duration} linear infinite;
+        background-color: ${this.color};
         box-shadow: 15px 15px  0 0,
                     -15px -15px  0 0,
                     15px -15px  0 0,
@@ -41,9 +47,9 @@ export class PixelSpinner extends SpinnerElement {
                     15px 0  0 0,
                     -15px 0  0 0,
                     0 -15px 0 0;
-        color: var(--pixel-spinner__color, ${color});
-        height: calc(var(--pixel-spinner__size, ${size}px) / 7);
-        width: calc(var(--pixel-spinner__size, ${size}px) / 7);
+        color: ${this.color};
+        height: calc(${this.size} / 7);
+        width: calc(${this.size} / 7);
       }
 
       @keyframes pixel-spinner-animation {

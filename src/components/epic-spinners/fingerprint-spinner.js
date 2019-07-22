@@ -19,24 +19,30 @@ export class FingerprintSpinner extends SpinnerElement {
     ];
   }
 
-  style({ color, duration, size }) {
+  get color() { return `var(--fingerprint-spinner__color, ${this.props.color})`; }
+
+  get duration() { return `var(--fingerprint-spinner__duration, ${this.props.duration}s)`; }
+
+  get size() { return `var(--fingerprint-spinner__size, ${this.props.size}px)`; }
+
+  style() {
     return `
       .fingerprint-spinner {
-        height: var(--fingerprint-spinner__size, ${size}px);
+        height: ${this.size};
         overflow: hidden;
         padding: 2px;
         position: relative;
-        width: var(--fingerprint-spinner__size, ${size}px);
+        width: ${this.size};
       }
 
       .fingerprint-spinner .spinner-ring {
-        animation: fingerprint-spinner-animation var(--fingerprint-spinner__duration, ${duration}s) cubic-bezier(0.680, -0.750, 0.265, 1.750) infinite forwards;
+        animation: fingerprint-spinner-animation ${this.duration} cubic-bezier(0.680, -0.750, 0.265, 1.750) infinite forwards;
         border-bottom-color: transparent;
         border-left-color: transparent;
         border-radius: 50%;
         border-right-color: transparent;
         border-style: solid;
-        border-top-color: var(--fingerprint-spinner__color, ${color});
+        border-top-color: ${this.color};
         border-width: 2px;
         bottom: 0;
         left: 0;
@@ -48,56 +54,56 @@ export class FingerprintSpinner extends SpinnerElement {
 
       .fingerprint-spinner .spinner-ring:nth-child(1) {
         animation-delay: calc(50ms * 1);
-        height: calc(var(--fingerprint-spinner__size, ${size}px) / 9 + 0 * var(--fingerprint-spinner__size, ${size}px) / 9);
-        width: calc(var(--fingerprint-spinner__size, ${size}px) / 9 + 0 * var(--fingerprint-spinner__size, ${size}px) / 9);
+        height: calc(${this.size} / 9 + 0 * ${this.size} / 9);
+        width: calc(${this.size} / 9 + 0 * ${this.size} / 9);
       }
 
       .fingerprint-spinner .spinner-ring:nth-child(2) {
         animation-delay: calc(50ms * 2);
-        height: calc(var(--fingerprint-spinner__size, ${size}px) / 9 + 1 * var(--fingerprint-spinner__size, ${size}px) / 9);
-        width: calc(var(--fingerprint-spinner__size, ${size}px) / 9 + 1 * var(--fingerprint-spinner__size, ${size}px) / 9);
+        height: calc(${this.size} / 9 + 1 * ${this.size} / 9);
+        width: calc(${this.size} / 9 + 1 * ${this.size} / 9);
       }
 
       .fingerprint-spinner .spinner-ring:nth-child(3) {
         animation-delay: calc(50ms * 3);
-        height: calc(var(--fingerprint-spinner__size, ${size}px) / 9 + 2 * var(--fingerprint-spinner__size, ${size}px) / 9);
-        width: calc(var(--fingerprint-spinner__size, ${size}px) / 9 + 2 * var(--fingerprint-spinner__size, ${size}px) / 9);
+        height: calc(${this.size} / 9 + 2 * ${this.size} / 9);
+        width: calc(${this.size} / 9 + 2 * ${this.size} / 9);
       }
 
       .fingerprint-spinner .spinner-ring:nth-child(4) {
         animation-delay: calc(50ms * 4);
-        height: calc(var(--fingerprint-spinner__size, ${size}px) / 9 + 3 * var(--fingerprint-spinner__size, ${size}px) / 9);
-        width: calc(var(--fingerprint-spinner__size, ${size}px) / 9 + 3 * var(--fingerprint-spinner__size, ${size}px) / 9);
+        height: calc(${this.size} / 9 + 3 * ${this.size} / 9);
+        width: calc(${this.size} / 9 + 3 * ${this.size} / 9);
       }
 
       .fingerprint-spinner .spinner-ring:nth-child(5) {
         animation-delay: calc(50ms * 5);
-        height: calc(var(--fingerprint-spinner__size, ${size}px) / 9 + 4 * var(--fingerprint-spinner__size, ${size}px) / 9);
-        width: calc(var(--fingerprint-spinner__size, ${size}px) / 9 + 4 * var(--fingerprint-spinner__size, ${size}px) / 9);
+        height: calc(${this.size} / 9 + 4 * ${this.size} / 9);
+        width: calc(${this.size} / 9 + 4 * ${this.size} / 9);
       }
 
       .fingerprint-spinner .spinner-ring:nth-child(6) {
         animation-delay: calc(50ms * 6);
-        height: calc(var(--fingerprint-spinner__size, ${size}px) / 9 + 5 * var(--fingerprint-spinner__size, ${size}px) / 9);
-        width: calc(var(--fingerprint-spinner__size, ${size}px) / 9 + 5 * var(--fingerprint-spinner__size, ${size}px) / 9);
+        height: calc(${this.size} / 9 + 5 * ${this.size} / 9);
+        width: calc(${this.size} / 9 + 5 * ${this.size} / 9);
       }
 
       .fingerprint-spinner .spinner-ring:nth-child(7) {
         animation-delay: calc(50ms * 7);
-        height: calc(var(--fingerprint-spinner__size, ${size}px) / 9 + 6 * var(--fingerprint-spinner__size, ${size}px) / 9);
-        width: calc(var(--fingerprint-spinner__size, ${size}px) / 9 + 6 * var(--fingerprint-spinner__size, ${size}px) / 9);
+        height: calc(${this.size} / 9 + 6 * ${this.size} / 9);
+        width: calc(${this.size} / 9 + 6 * ${this.size} / 9);
       }
 
       .fingerprint-spinner .spinner-ring:nth-child(8) {
         animation-delay: calc(50ms * 8);
-        height: calc(var(--fingerprint-spinner__size, ${size}px) / 9 + 7 * var(--fingerprint-spinner__size, ${size}px) / 9);
-        width: calc(var(--fingerprint-spinner__size, ${size}px) / 9 + 7 * var(--fingerprint-spinner__size, ${size}px) / 9);
+        height: calc(${this.size} / 9 + 7 * ${this.size} / 9);
+        width: calc(${this.size} / 9 + 7 * ${this.size} / 9);
       }
 
       .fingerprint-spinner .spinner-ring:nth-child(9) {
         animation-delay: calc(50ms * 9);
-        height: calc(var(--fingerprint-spinner__size, ${size}px) / 9 + 8 * var(--fingerprint-spinner__size, ${size}px) / 9);
-        width: calc(var(--fingerprint-spinner__size, ${size}px) / 9 + 8 * var(--fingerprint-spinner__size, ${size}px) / 9);
+        height: calc(${this.size} / 9 + 8 * ${this.size} / 9);
+        width: calc(${this.size} / 9 + 8 * ${this.size} / 9);
       }
 
       @keyframes fingerprint-spinner-animation {

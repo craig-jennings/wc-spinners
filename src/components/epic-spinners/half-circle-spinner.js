@@ -19,18 +19,24 @@ export class HalfCircleSpinner extends SpinnerElement {
     ];
   }
 
-  style({ color, duration, size }) {
+  get color() { return `var(--half-circle-spinner__color, ${this.props.color})`; }
+
+  get duration() { return `var(--half-circle-spinner__duration, ${this.props.duration}s)`; }
+
+  get size() { return `var(--half-circle-spinner__size, ${this.props.size}px)`; }
+
+  style() {
     return `
       .half-circle-spinner {
         border-radius: 100%;
-        height: var(--half-circle-spinner__size, ${size}px);
+        height: ${this.size};
         position: relative;
-        width: var(--half-circle-spinner__size, ${size}px);
+        width: ${this.size};
       }
 
       .half-circle-spinner .circle {
         border-radius: 100%;
-        border: calc(var(--half-circle-spinner__size, ${size}px) / 10) solid transparent;
+        border: calc(${this.size} / 10) solid transparent;
         content: "";
         height: 100%;
         position: absolute;
@@ -38,13 +44,13 @@ export class HalfCircleSpinner extends SpinnerElement {
       }
 
       .half-circle-spinner .circle.circle-1 {
-        animation: half-circle-spinner-animation var(--half-circle-spinner__duration, ${duration}s) infinite;
-        border-top-color: var(--half-circle-spinner__color, ${color});
+        animation: half-circle-spinner-animation ${this.duration} infinite;
+        border-top-color: ${this.color};
       }
 
       .half-circle-spinner .circle.circle-2 {
-        animation: half-circle-spinner-animation var(--half-circle-spinner__duration, ${duration}s) infinite alternate;
-        border-bottom-color: var(--half-circle-spinner__color, ${color});
+        animation: half-circle-spinner-animation ${this.duration} infinite alternate;
+        border-bottom-color: ${this.color};
       }
 
       @keyframes half-circle-spinner-animation {
