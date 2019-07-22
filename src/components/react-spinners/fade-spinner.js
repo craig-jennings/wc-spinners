@@ -1,6 +1,5 @@
 import SpinnerElement from '../../SpinnerElement.js';
 
-// TODO: Fix positioning (not centered)
 export class FadeSpinner extends SpinnerElement {
   static get is() { return 'fade-spinner'; }
 
@@ -8,8 +7,7 @@ export class FadeSpinner extends SpinnerElement {
     return {
       color: '#36d7b7',
       height: 15,
-      margin: 2,
-      radius: 20,
+      radius: 10,
       width: 5,
     };
   }
@@ -18,93 +16,63 @@ export class FadeSpinner extends SpinnerElement {
     return [
       'color',
       'height',
-      'margin',
       'radius',
       'width',
     ];
   }
 
+  get color() { return `var(--fade-spinner__color, ${this.props.color})`; }
+
+  get height() { return `var(--fade-spinner__height, ${this.props.height}px)`; }
+
+  get radius() { return `var(--fade-spinner__radius, ${this.props.radius}px)`; }
+
+  get width() { return `var(--fade-spinner__width, ${this.props.width}px)`; }
+
+  get center() { return `calc(${this.radius} + ${this.height})`; }
+
+  buildLine(i) {
+    return `
+      .container:nth-child(${i}) { transform: rotate(${(i - 1) * 45}deg); }
+      .container:nth-child(${i}) .line { animation-delay: calc(${i - 1} * .12s); }
+    `;
+  }
+
   style() {
-    const { color, height, margin, radius, width } = this.props; // eslint-disable-line object-curly-newline
-
-    const _radius = `var(--fade-spinner__radius, ${radius}px)`;
-    const quarter = `calc(${_radius} / 2 + ${_radius} / 5.5)`;
-
     return `
       .fade-spinner {
         font-size: 0;
-        height: calc(${_radius} * 3);
-        left: ${_radius};
+        height: calc(${this.center} * 2);
+        width: calc(${this.center} * 2);
         position: relative;
-        top: ${_radius};
-        width: calc(${_radius} * 3);
+      }
+
+      .container {
+        height: calc(${this.center} * 2);
+        width: ${this.width};
+        position: absolute;
+        top: 0;
+        left: calc(${this.center} - ${this.width} / 2);
       }
 
       .line {
         animation-fill-mode: both;
         animation: fade 1.2s infinite ease-in-out;
-        background-color: var(--fade-spinner__color, ${color});
-        border-radius: ${_radius};
-        height: var(--fade-spinner__height, ${height}px);
-        margin: var(--fade-spinner__margin, ${margin}px);
-        position: absolute;
+        background-color: ${this.color};
+        border-radius: 4px;
+        height: ${this.height};
         transition: 2s;
-        width: var(--fade-spinner__width, ${width}px);
+        width: ${this.width};
       }
 
-      .line:nth-child(1) {
-        animation-delay: 0s;
-        left: 0;
-        top: ${_radius};
-      }
-
-      .line:nth-child(2) {
-        animation-delay: calc(.12s * 1);
-        left: ${quarter};
-        top: ${quarter};
-        transform: rotate(-45deg);
-      }
-
-      .line:nth-child(3) {
-        animation-delay: calc(.12s * 2);
-        left: ${_radius};
-        top: 0;
-        transform: rotate(90deg);
-      }
-
-      .line:nth-child(4) {
-        animation-delay: calc(.12s * 3);
-        left: ${quarter};
-        top: calc(${quarter} * -1);
-        transform: rotate(45deg);
-      }
-
-      .line:nth-child(5) {
-        animation-delay: calc(.12s * 4);
-        left: 0;
-        top: calc(${_radius} * -1);
-      }
-
-      .line:nth-child(6) {
-        animation-delay: calc(.12s * 5);
-        left: calc(${quarter} * -1);
-        top: calc(${quarter} * -1);
-        transform: rotate(-45deg);
-      }
-
-      .line:nth-child(7) {
-        animation-delay: calc(.12s * 6);
-        left: calc(${_radius} * -1);
-        top: 0;
-        transform: rotate(90deg);
-      }
-
-      .line:nth-child(8) {
-        animation-delay: calc(.12s * 7);
-        left: calc(${quarter} * -1);
-        top: ${quarter};
-        transform: rotate(45deg);
-      }
+      ${this.buildLine(1)}
+      ${this.buildLine(2)}
+      ${this.buildLine(3)}
+      ${this.buildLine(4)}
+      ${this.buildLine(5)}
+      ${this.buildLine(6)}
+      ${this.buildLine(7)}
+      ${this.buildLine(8)}
 
       @keyframes fade {
         50%  { opacity: 0.3; }
@@ -116,14 +84,37 @@ export class FadeSpinner extends SpinnerElement {
   template() {
     return `
       <div class="fade-spinner">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
+        <div class="container">
+          <div class="line"></div>
+        </div>
+
+        <div class="container">
+          <div class="line"></div>
+        </div>
+
+        <div class="container">
+          <div class="line"></div>
+        </div>
+
+        <div class="container">
+          <div class="line"></div>
+        </div>
+
+        <div class="container">
+          <div class="line"></div>
+        </div>
+
+        <div class="container">
+          <div class="line"></div>
+        </div>
+
+        <div class="container">
+          <div class="line"></div>
+        </div>
+
+        <div class="container">
+          <div class="line"></div>
+        </div>
       </div>
     `;
   }
