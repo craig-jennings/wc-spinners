@@ -8,7 +8,7 @@ export default {
   output: {
     file: 'docs/index.js',
     format: 'umd',
-    name: 'WcEpicSpinners',
+    name: 'WcSpinners',
     sourcemap: 'inline',
   },
 

@@ -2,12 +2,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Epic Spinner Web Components</title>
+  <title>Web Component Spinners</title>
 
   <style>
     * {
       box-sizing: border-box;
-      margin-top: 0;
+      margin: 0;
+      padding: 0;
     }
 
     html {
@@ -17,17 +18,9 @@
     body {
       background-color: #292739;
       color: #fafafa;
-      display: grid;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-      grid-template-columns: auto minmax(200px, calc(150px * 5)) auto;
-      grid-template-rows: auto 1fr auto;
       margin: 0;
       min-height: 100vh;
-    }
-
-    h1,
-    h4 {
-      margin-bottom: 20px;
     }
 
     a {
@@ -43,10 +36,24 @@
       color: #fafafa;
     }
 
+    code {
+      background-color: #4c486b;
+      border-radius: 5px;
+      display: inline-block;
+      line-height: 1.5rem;
+      padding: 20px 40px;
+      text-align: center;
+    }
+
     footer {
       grid-column: 2 / span 2;
       line-height: 1.5rem;
       padding: 20px;
+    }
+
+    h1,
+    h4 {
+      margin-bottom: 20px;
     }
 
     header {
@@ -55,13 +62,10 @@
       text-align: center;
     }
 
-    code {
-      background-color: #4c486b;
-      border-radius: 5px;
-      display: inline-block;
-      line-height: 1.5rem;
-      padding: 20px 40px;
-      text-align: center;
+    section {
+      display: grid;
+      grid-template-columns: auto minmax(200px, calc(150px * 5)) auto;
+      grid-template-rows: auto 1fr auto;
     }
 
     .spinners {
@@ -104,191 +108,211 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>Epic Spinner Web Components</h1>
+  <section>
+    <header>
+      <h1>Epic Spinner Web Components</h1>
 
-    <h4>
-      <a href="https://github.com/craigjennings11/wc-epic-spinners/">Get Started</a>
-    </h4>
+      <h4>
+        <a href="https://github.com/craigjennings11/wc-epic-spinners/">Get Started</a>
+      </h4>
 
-    <code>
-      <div>npm i --save wc-epic-spinners</div>
-      <div>yarn add wc-epic-spinners</div>
-    </code>
-  </header>
+      <code>
+        <div>npm i --save wc-epic-spinners</div>
+        <div>yarn add wc-epic-spinners</div>
+      </code>
+    </header>
 
-  <div class="spinners">
-    <div class="spinner-container">
-      <atom-spinner></atom-spinner>
-      <div class="name">Atom</div>
+    <div class="spinners">
+      <div class="spinner-container">
+        <atom-spinner></atom-spinner>
+        <div class="name">Atom</div>
+      </div>
+
+      <div class="spinner-container">
+        <breeding-rhombus-spinner></breeding-rhombus-spinner>
+        <div class="name">Breeding Rhombus</div>
+      </div>
+
+      <div class="spinner-container">
+        <circles-to-rhombuses-spinner></circles-to-rhombuses-spinner>
+        <div class="name">Circles to Rhombuses</div>
+      </div>
+
+      <div class="spinner-container">
+        <fingerprint-spinner></fingerprint-spinner>
+        <div class="name">Fingerprint</div>
+      </div>
+
+      <div class="spinner-container">
+        <flower-spinner></flower-spinner>
+        <div class="name">Flower</div>
+      </div>
+
+      <div class="spinner-container">
+        <fulfilling-bouncing-circle-spinner></fulfilling-bouncing-circle-spinner>
+        <div class="name">Fulfilling Bouncing Circle</div>
+      </div>
+
+      <div class="spinner-container">
+        <fulfilling-square-spinner></fulfilling-square-spinner>
+        <div class="name">Fulfilling Square</div>
+      </div>
+
+      <div class="spinner-container">
+        <half-circle-spinner></half-circle-spinner>
+        <div class="name">Half Circle</div>
+      </div>
+
+      <div class="spinner-container">
+        <hollow-dots-spinner></hollow-dots-spinner>
+        <div class="name"></div>
+        <div class="name">Hollow Dots</div>
+      </div>
+
+      <div class="spinner-container">
+        <intersecting-circles-spinner></intersecting-circles-spinner>
+        <div class="name">Intersecting Circles</div>
+      </div>
+
+      <div class="spinner-container">
+        <looping-rhombuses-spinner></looping-rhombuses-spinner>
+        <div class="name">Looping Rhombuses</div>
+      </div>
+
+      <div class="spinner-container">
+        <orbit-spinner></orbit-spinner>
+        <div class="name">Orbit</div>
+      </div>
+
+      <div class="spinner-container">
+        <pixel-spinner></pixel-spinner>
+        <div class="name">Pixel</div>
+      </div>
+
+      <div class="spinner-container">
+        <radar-spinner></radar-spinner>
+        <div class="name">Radar</div>
+      </div>
+
+      <div class="spinner-container">
+        <scaling-squares-spinner></scaling-squares-spinner>
+        <div class="name">Scaling Squares</div>
+      </div>
+
+      <div class="spinner-container">
+        <self-building-square-spinner></self-building-square-spinner>
+        <div class="name">Self-Building Square</div>
+      </div>
+
+      <div class="spinner-container">
+        <semipolar-spinner></semipolar-spinner>
+        <div class="name">Semipolar</div>
+      </div>
+
+      <div class="spinner-container">
+        <spring-spinner></spring-spinner>
+        <div class="name">Spring</div>
+      </div>
+
+      <div class="spinner-container">
+        <swapping-squares-spinner></swapping-squares-spinner>
+        <div class="name">Swapping Squares</div>
+      </div>
+
+      <div class="spinner-container">
+        <trinity-rings-spinner></trinity-rings-spinner>
+        <div class="name">Trinity Rings</div>
+      </div>
     </div>
 
-    <div class="spinner-container">
-      <breeding-rhombus-spinner></breeding-rhombus-spinner>
-      <div class="name">Breeding Rhombus</div>
+    <footer>
+      <div>
+        By <a href="https://github.com/craigjennings11">@craigjennings11</a>
+      </div>
+
+      <div>
+        This project is an implementation of the <a href="https://epic-spinners.epicmax.co">Epic Spinners</a> project created by <a href="http://epicmax.co/">Epicmax</a>
+      </div>
+    </footer>
+  </section>
+
+  <section>
+    <header>
+      <h1>React Spinner Web Components</h1>
+    </header>
+
+    <div class="spinners">
+      <div class="spinner-container">
+        <bar-spinner></bar-spinner>
+        <div class="name">Bar Spinner</div>
+      </div>
+
+      <div class="spinner-container">
+        <beat-spinner></beat-spinner>
+        <div class="name">Beat Spinner</div>
+      </div>
+
+      <div class="spinner-container">
+        <bounce-spinner></bounce-spinner>
+        <div class="name">Bounce Spinner</div>
+      </div>
+
+      <div class="spinner-container">
+        <circle-spinner></circle-spinner>
+        <div class="name">Circle Spinner</div>
+      </div>
+
+      <div class="spinner-container">
+        <climbing-box-spinner></climbing-box-spinner>
+        <div class="name">Climbing Box Spinner</div>
+      </div>
+
+      <div class="spinner-container">
+        <clip-spinner></clip-spinner>
+        <div class="name">Clip Spinner</div>
+      </div>
+
+      <div class="spinner-container">
+        <dot-spinner></dot-spinner>
+        <div class="name">Dot Spinner</div>
+      </div>
+
+      <div class="spinner-container">
+        <fade-spinner></fade-spinner>
+        <div class="name">Fade Spinner</div>
+      </div>
+
+      <div class="spinner-container">
+        <grid-spinner></grid-spinner>
+        <div class="name">Grid Spinner</div>
+      </div>
+
+      <div class="spinner-container">
+        <hash-spinner></hash-spinner>
+        <div class="name">Hash Spinner</div>
+      </div>
+
+      <div class="spinner-container">
+        <moon-spinner></moon-spinner>
+        <div class="name">Moon Spinner</div>
+      </div>
+
+      <div class="spinner-container">
+        <pacman-spinner></pacman-spinner>
+        <div class="name">Pacman Spinner</div>
+      </div>
     </div>
 
-    <div class="spinner-container">
-      <circles-to-rhombuses-spinner></circles-to-rhombuses-spinner>
-      <div class="name">Circles to Rhombuses</div>
-    </div>
+    <footer>
+      <div>
+        By <a href="https://github.com/craigjennings11">@craigjennings11</a>
+      </div>
 
-    <div class="spinner-container">
-      <fingerprint-spinner></fingerprint-spinner>
-      <div class="name">Fingerprint</div>
-    </div>
-
-    <div class="spinner-container">
-      <flower-spinner></flower-spinner>
-      <div class="name">Flower</div>
-    </div>
-
-    <div class="spinner-container">
-      <fulfilling-bouncing-circle-spinner></fulfilling-bouncing-circle-spinner>
-      <div class="name">Fulfilling Bouncing Circle</div>
-    </div>
-
-    <div class="spinner-container">
-      <fulfilling-square-spinner></fulfilling-square-spinner>
-      <div class="name">Fulfilling Square</div>
-    </div>
-
-    <div class="spinner-container">
-      <half-circle-spinner></half-circle-spinner>
-      <div class="name">Half Circle</div>
-    </div>
-
-    <div class="spinner-container">
-      <hollow-dots-spinner></hollow-dots-spinner>
-      <div class="name"></div>
-      <div class="name">Hollow Dots</div>
-    </div>
-
-    <div class="spinner-container">
-      <intersecting-circles-spinner></intersecting-circles-spinner>
-      <div class="name">Intersecting Circles</div>
-    </div>
-
-    <div class="spinner-container">
-      <looping-rhombuses-spinner></looping-rhombuses-spinner>
-      <div class="name">Looping Rhombuses</div>
-    </div>
-
-    <div class="spinner-container">
-      <orbit-spinner></orbit-spinner>
-      <div class="name">Orbit</div>
-    </div>
-
-    <div class="spinner-container">
-      <pixel-spinner></pixel-spinner>
-      <div class="name">Pixel</div>
-    </div>
-
-    <div class="spinner-container">
-      <radar-spinner></radar-spinner>
-      <div class="name">Radar</div>
-    </div>
-
-    <div class="spinner-container">
-      <scaling-squares-spinner></scaling-squares-spinner>
-      <div class="name">Scaling Squares</div>
-    </div>
-
-    <div class="spinner-container">
-      <self-building-square-spinner></self-building-square-spinner>
-      <div class="name">Self-Building Square</div>
-    </div>
-
-    <div class="spinner-container">
-      <semipolar-spinner></semipolar-spinner>
-      <div class="name">Semipolar</div>
-    </div>
-
-    <div class="spinner-container">
-      <spring-spinner></spring-spinner>
-      <div class="name">Spring</div>
-    </div>
-
-    <div class="spinner-container">
-      <swapping-squares-spinner></swapping-squares-spinner>
-      <div class="name">Swapping Squares</div>
-    </div>
-
-    <div class="spinner-container">
-      <trinity-rings-spinner></trinity-rings-spinner>
-      <div class="name">Trinity Rings</div>
-    </div>
-
-    <div class="spinner-container">
-      <bar-spinner></bar-spinner>
-      <div class="name">Bar Spinner</div>
-    </div>
-
-    <div class="spinner-container">
-      <beat-spinner></beat-spinner>
-      <div class="name">Beat Spinner</div>
-    </div>
-
-    <div class="spinner-container">
-      <bounce-spinner></bounce-spinner>
-      <div class="name">Bounce Spinner</div>
-    </div>
-
-    <div class="spinner-container">
-      <circle-spinner></circle-spinner>
-      <div class="name">Circle Spinner</div>
-    </div>
-
-    <div class="spinner-container">
-      <climbing-box-spinner></climbing-box-spinner>
-      <div class="name">Climbing Box Spinner</div>
-    </div>
-
-    <div class="spinner-container">
-      <clip-spinner></clip-spinner>
-      <div class="name">Clip Spinner</div>
-    </div>
-
-    <div class="spinner-container">
-      <dot-spinner></dot-spinner>
-      <div class="name">Dot Spinner</div>
-    </div>
-
-    <div class="spinner-container">
-      <fade-spinner></fade-spinner>
-      <div class="name">Fade Spinner</div>
-    </div>
-
-    <div class="spinner-container">
-      <grid-spinner></grid-spinner>
-      <div class="name">Grid Spinner</div>
-    </div>
-
-    <div class="spinner-container">
-      <hash-spinner></hash-spinner>
-      <div class="name">Hash Spinner</div>
-    </div>
-
-    <div class="spinner-container">
-      <moon-spinner></moon-spinner>
-      <div class="name">Moon Spinner</div>
-    </div>
-
-    <div class="spinner-container">
-      <pacman-spinner></pacman-spinner>
-      <div class="name">Pacman Spinner</div>
-    </div>
-  </div>
-
-  <footer>
-    <div>
-      By <a href="https://github.com/craigjennings11">@craigjennings11</a>
-    </div>
-
-    <div>
-      This project is an implementation of the <a href="https://epic-spinners.epicmax.co">Epic Spinners</a> project created by <a href="http://epicmax.co/">Epicmax</a>
-    </div>
-  </footer>
+      <div>
+        This project is an implementation of the <a href="https://www.react-spinners.com/">React Spinners</a> project created by <a href="https://github.com/davidhu2000">davidhu2000</a>
+      </div>
+    </footer>
+  </section>
 
 
 <script type="text/javascript" src="index.js"></script>

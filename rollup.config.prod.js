@@ -4,7 +4,10 @@ import minify from 'rollup-plugin-babel-minify';
 import pkg from './package.json';
 import resolve from 'rollup-plugin-node-resolve';
 
-const filenames = fs.readdirSync('src/components/');
+const filenames = [
+  ...fs.readdirSync('src/components/epic-spinners').map(name => ({ dir: 'epic-spinners', name })),
+  ...fs.readdirSync('src/components/react-spinners').map(name => ({ dir: 'react-spinners', name })),
+];
 
 const plugins = [
   filesize(),
@@ -19,21 +22,21 @@ const configs = [
     output: {
       file: pkg.browser,
       format: 'umd',
-      name: 'WcEpicSpinners',
+      name: 'WcSpinners',
     },
 
     plugins,
   },
 ];
 
-filenames.forEach((filename) => {
+filenames.forEach(({ dir, name }) => {
   configs.push({
-    input: `src/components/${filename}`,
+    input: `src/components/${dir}/${name}`,
 
     output: {
-      file: `dist/${filename}`,
+      file: `dist/${name}`,
       format: 'umd',
-      name: filename.substring(0, filename.length - 3), // Remove '.js' from the filename
+      name: name.substring(0, name.length - 3), // Remove '.js' from the filename
     },
 
     plugins,

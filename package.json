@@ -2,7 +2,7 @@
   "name": "wc-epic-spinners",
   "description": "Epic spinners implemented as native web components",
   "version": "1.0.1",
-  "browser": "dist/wc-epic-spinners.js",
+  "browser": "dist/wc-spinners.js",
   "main": "src/index.js",
   "license": "MIT",
   "repository": {
@@ -13,9 +13,10 @@
     "node": ">=8.9.0"
   },
   "keywords": [
-    "web components",
     "epic spinners",
-    "spinners"
+    "react spinners",
+    "spinners",
+    "web components"
   ],
   "files": [
     "/dist/**",
