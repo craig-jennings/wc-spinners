@@ -17,31 +17,33 @@ export class CircleSpinner extends SpinnerElement {
     ];
   }
 
-  calculateCircle(i) {
-    const { size } = this.props;
+  get color() { return `var(--circle-spinner__color, ${this.props.color})`; }
 
+  get size() { return `var(--circle-spinner__size, ${this.props.size}px)`; }
+
+  calculateCircle(i) {
     return `
-      animation-delay: ${i * 0.2}s;
-      height: calc(var(--circle-loader__size, ${size}px) * ${1 - i / 10});
+      animation-delay: ${i * -0.2}s;
+      height: calc(${this.size} * ${1 - i / 10});
       left: ${i * 0.7 * 2.5}%;
       top: ${i * 0.35 * 2.5}%;
-      width: calc(var(--circle-loader__size, ${size}px) * ${1 - i / 10});
+      width: calc(${this.size} * ${1 - i / 10});
     `;
   }
 
-  style({ color, size }) {
+  style() {
     return `
       .circle-spinner {
-        height: var(--circle-loader__size, ${size}px);
+        height: ${this.size};
         position: relative;
-        width: var(--circle-loader__size, ${size}px);
+        width: ${this.size};
       }
 
       .circle {
         animation-fill-mode: "";
         animation: circle 1s infinite linear;
-        border-top-color: var(--circle-spinner__color, ${color});
-        border-left-color: var(--circle-spinner__color, ${color});
+        border-top-color: ${this.color};
+        border-left-color: ${this.color};
         border-radius: 100%;
         border-style: solid none none solid;
         border-width: 1px 1px;

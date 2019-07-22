@@ -19,6 +19,12 @@ export class GridSpinner extends SpinnerElement {
     ];
   }
 
+  get color() { return `var(--grid-spinner__color, ${this.props.color})`; }
+
+  get margin() { return `var(--grid-spinner__margin, ${this.props.margin}px)`; }
+
+  get size() { return `var(--grid-spinner__size, ${this.props.size}px)`; }
+
   generateCellAnimation() {
     const random = Math.random();
 
@@ -29,23 +35,21 @@ export class GridSpinner extends SpinnerElement {
   }
 
   style() {
-    const { color, margin, size } = this.props;
-
     return `
       .grid-spinner {
         font-size: 0;
-        width: calc(var(--grid-spinner__size, ${size}px) * 3 + var(--grid-spinner__margin, ${margin}px) * 6);
+        width: calc(${this.size} * 3 + ${this.margin} * 6);
       }
 
       .cell {
         animation-fill-mode: both;
         animation: grid infinite ease;
-        background-color: var(--grid-spinner__color, ${color});
+        background-color: ${this.color};
         border-radius: 100%;
         display: inline-block;
-        height: var(--grid-spinner__size, ${size}px);
-        margin: var(--grid-spinner__margin, ${margin}px);
-        width: var(--grid-spinner__size, ${size}px);
+        height: ${this.size};
+        margin: ${this.margin};
+        width: ${this.size};
       }
 
       .cell:nth-child(1) { ${this.generateCellAnimation()} }

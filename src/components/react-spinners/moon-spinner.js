@@ -17,6 +17,12 @@ export class MoonSpinner extends SpinnerElement {
     ];
   }
 
+  get color() { return `var(--moon-spinner__color, ${this.props.color})`; }
+
+  get moonSize() { return `calc(${this.size} / 7)`; }
+
+  get size() { return `var(--moon-spinner__size, ${this.props.size}px)`; }
+
   ballStyle(size) {
     return `
       border-radius: 100%;
@@ -26,35 +32,28 @@ export class MoonSpinner extends SpinnerElement {
   }
 
   style() {
-    const { color, size } = this.props;
-
-    const _color = `var(--moon-spinner__color, ${color})`;
-    const _size = `var(--moon-spinner__size, ${size}px)`;
-
-    const moonSize = `calc(${_size} / 7)`;
-
     return `
       .moon-spinner {
         animation-fill-mode: forwards;
         animation: moon 0.6s 0s infinite linear;
-        height: calc(${_size} + ${moonSize} * 2);
+        height: calc(${this.size} + ${this.moonSize} * 2);
         position: relative;
-        width: calc(${_size} + ${moonSize} * 2);
+        width: calc(${this.size} + ${this.moonSize} * 2);
       }
 
       .ball {
-        ${this.ballStyle(moonSize)};
+        ${this.ballStyle(this.moonSize)};
         animation-fill-mode: forwards;
         animation: moon 0.6s 0s infinite linear;
-        background-color: ${_color};
+        background-color: ${this.color};
         opacity: 0.8;
         position: absolute;
-        top: calc(${_size} / 2 - ${moonSize} / 2);
+        top: calc(${this.size} / 2 - ${this.moonSize} / 2);
       }
 
       .circle {
-        ${this.ballStyle(_size)};
-        border: ${moonSize} solid ${_color};
+        ${this.ballStyle(this.size)};
+        border: ${this.moonSize} solid ${this.color};
         box-sizing: content-box;
         opacity: 0.1;
       }

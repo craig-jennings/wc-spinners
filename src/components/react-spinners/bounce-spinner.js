@@ -17,25 +17,29 @@ export class BounceSpinner extends SpinnerElement {
     ];
   }
 
-  style({ color, size }) {
+  get color() { return `var(--bounce-spinner__color, ${this.props.color})`; }
+
+  get size() { return `var(--bounce-spinner__size, ${this.props.size}px)`; }
+
+  style() {
     return `
       .bounce-spinner {
-        height: var(--bounce-loader__size, ${size}px);
+        height: ${this.size};
         position: relative;
-        width: var(--bounce-loader__size, ${size}px);
+        width: ${this.size};
       }
 
       .bounce {
         animation-fill-mode: both;
         animation: bounce 2.1s infinite ease-in-out;
-        background-color: var(--bounce-loader__color, ${color});
+        background-color: ${this.color};
         border-radius: 100%;
-        height: var(--bounce-loader__size, ${size}px);
+        height: ${this.size};
         left: 0;
         opacity: 0.6;
         position: absolute;
         top: 0;
-        width: var(--bounce-loader__size, ${size}px);
+        width: ${this.size};
       }
 
       .bounce:nth-child(1) { animation-delay: 1s; }

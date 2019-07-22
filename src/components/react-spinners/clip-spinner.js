@@ -17,23 +17,25 @@ export class ClipSpinner extends SpinnerElement {
     ];
   }
 
-  style() {
-    const { color, size } = this.props;
+  get color() { return `var(--clip-spinner__color, ${this.props.color})`; }
 
+  get size() { return `var(--clip-spinner__size, ${this.props.size}px)`; }
+
+  style() {
     return `
       .clip-spinner {
         animation-fill-mode: both;
         animation: clip 0.75s 0s infinite linear;
         background: transparent !important;
         border-bottom-color: transparent;
-        border-left-color: var(--clip-spinner__color, ${color});
+        border-left-color: ${this.color};
         border-radius: 100%;
-        border-right-color: var(--clip-spinner__color, ${color});
+        border-right-color: ${this.color};
         border-style: solid;
-        border-top-color: var(--clip-spinner__color, ${color});
+        border-top-color: ${this.color};
         border-width: 2px;
-        height: var(--clip-spinner__size, ${size}px);
-        width: var(--clip-spinner__size, ${size}px);
+        height: ${this.size};
+        width: ${this.size};
       }
 
       @keyframes clip {

@@ -17,26 +17,28 @@ export class DotSpinner extends SpinnerElement {
     ];
   }
 
-  style() {
-    const { color, size } = this.props;
+  get color() { return `var(--dot-spinner__color, ${this.props.color})`; }
 
+  get size() { return `var(--dot-spinner__size, ${this.props.size}px)`; }
+
+  style() {
     return `
       .dot-spinner {
         animation-fill-mode: forwards;
         animation: rotate 2s 0s infinite linear;
-        height: var(--dot-spinner__size, ${size}px);
+        height: ${this.size};
         position: relative;
-        width: var(--dot-spinner__size, ${size}px);
+        width: ${this.size};
       }
 
       .dot {
         animation-fill-mode: forwards;
         animation: bounce 2s infinite linear;
-        background-color: var(--dot-spinner__color, ${color});
+        background-color: ${this.color};
         border-radius: 100%;
-        height: calc(var(--dot-spinner__size, ${size}px) / 2);
+        height: calc(${this.size} / 2);
         position: absolute;
-        width: calc(var(--dot-spinner__size, ${size}px) / 2);
+        width: calc(${this.size} / 2);
       }
 
       .dot:nth-child(1) {

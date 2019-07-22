@@ -19,33 +19,33 @@ export class PacmanSpinner extends SpinnerElement {
     ];
   }
 
+  get color() { return `var(--pacman-spinner__color, ${this.props.color})`; }
+
+  get margin() { return `var(--pacman-spinner__margin, ${this.props.margin}px)`; }
+
+  get size() { return `var(--pacman-spinner__size, ${this.props.size}px)`; }
+
   ballDelay(factor) {
     return `animation-delay: ${factor * 0.25}s;`;
   }
 
   style() {
-    const { color, margin, size } = this.props;
-
-    const _color = `var(--pacman-spinner__color, ${color})`;
-    const _size = `var(--pacman-spinner__size, ${size}px)`;
-    const _margin = `var(--pacman-spinner__margin, ${margin}px)`;
-
     return `
       .pacman-spinner {
         font-size: 0;
-        height: calc(${_size} * 2);
+        height: calc(${this.size} * 2);
         position: relative;
-        width: calc(${_size} * 2);
+        width: calc(${this.size} * 2);
       }
 
       .pacman-top {
         animation-fill-mode: both;
         animation: pacman1 0.8s infinite ease-in-out;
-        border-bottom: ${_size} solid ${_color};
-        border-left: ${_size} solid ${_color};
-        border-radius: ${_size};
-        border-right: ${_size} solid transparent;
-        border-top: ${_size} solid transparent;
+        border-bottom: ${this.size} solid ${this.color};
+        border-left: ${this.size} solid ${this.color};
+        border-radius: ${this.size};
+        border-right: ${this.size} solid transparent;
+        border-top: ${this.size} solid transparent;
         height: 0;
         position: absolute;
         width: 0;
@@ -54,11 +54,11 @@ export class PacmanSpinner extends SpinnerElement {
       .pacman-bottom {
         animation-fill-mode: both;
         animation: pacman2 0.8s infinite ease-in-out;
-        border-bottom: ${_size} solid transparent;
-        border-left: ${_size} solid ${color};
-        border-radius: ${_size};
-        border-right: ${_size} solid transparent;
-        border-top: ${_size} solid ${color};
+        border-bottom: ${this.size} solid transparent;
+        border-left: ${this.size} solid ${this.color};
+        border-radius: ${this.size};
+        border-right: ${this.size} solid transparent;
+        border-top: ${this.size} solid ${this.color};
         height: 0;
         position: absolute;
         width: 0;
@@ -67,15 +67,15 @@ export class PacmanSpinner extends SpinnerElement {
       .ball {
         animation-fill-mode: both;
         animation: ball 1s infinite linear;
-        background-color: ${color};
+        background-color: ${this.color};
         border-radius: 100%;
-        height: calc(${_size} / 2.5);
-        left: calc(${_size} * 4);
-        margin: ${_margin};
+        height: calc(${this.size} / 2.5);
+        left: calc(${this.size} * 4);
+        margin: ${this.margin};
         position: absolute;
-        top: ${_size};
-        transform: translate(0, calc(${_size} / -4));
-        width: calc(${_size} / 2.5);
+        top: ${this.size};
+        transform: translate(0, calc(${this.size} / -4));
+        width: calc(${this.size} / 2.5);
       }
 
       .ball:nth-child(3) { ${this.ballDelay(-3)} }
@@ -87,7 +87,7 @@ export class PacmanSpinner extends SpinnerElement {
         75%  { opacity: 0.7; }
 
         100% {
-          transform: translate(calc(${_size} * -4), calc(${_size} / -4));
+          transform: translate(calc(${this.size} * -4), calc(${this.size} / -4));
         }
       }
 

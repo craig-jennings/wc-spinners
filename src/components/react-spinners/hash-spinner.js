@@ -17,40 +17,39 @@ export class HashSpinner extends SpinnerElement {
     ];
   }
 
+  get color() { return `var(--hash-spinner__color, ${this.props.color})`; }
+
+  get lat() { return `calc(calc(${this.size} - ${this.thickness}) / 2)`; }
+
+  get offset() { return `calc(${this.lat} - ${this.thickness})`; }
+
+  get size() { return `var(--hash-spinner__size, ${this.props.size}px)`; }
+
+  get thickness() { return `calc(${this.size} / 5)`; }
+
   style() {
-    const { color, size } = this.props;
-
-    const _color = `var(--hash-spinner__color, ${color})`;
-    const _size = `var(--hash-spinner__size, ${size}px)`;
-
-    const _thickness = `calc(${_size} / 5)`;
-
-    const _lat = `calc(calc(${_size} - ${_thickness}) / 2)`;
-
-    const _offset = `calc(${_lat} - ${_thickness})`;
-
     return `
       .hash-spinner {
-        height: ${_size};
+        height: ${this.size};
         position: relative;
         transform: rotate(165deg);
-        width: ${_size};
+        width: ${this.size};
       }
 
       .hash {
         animation-duration: 2s;
         animation-fill-mode: none;
         animation-iteration-count: infinite;
-        border-radius: calc(${_size} / 10);
+        border-radius: calc(${this.size} / 10);
         content: "";
         display: block;
-        height: calc(${_size} / 5);
+        height: calc(${this.size} / 5);
         left: 50%;
         opacity: .9;
         position: absolute;
         top: 50%;
         transform: translate(-50%, -50%);
-        width: calc(${_size} / 5);
+        width: calc(${this.size} / 5);
       }
 
       .hash:nth-child(1) { animation-name: before; }
@@ -58,51 +57,51 @@ export class HashSpinner extends SpinnerElement {
 
       @keyframes before {
         0% {
-          box-shadow: ${_lat} calc(${_offset} * -1) ${_color},
-                      calc(${_lat} * -1) ${_offset} ${_color};
-          width: ${_thickness};
+          box-shadow: ${this.lat} calc(${this.offset} * -1) ${this.color},
+                      calc(${this.lat} * -1) ${this.offset} ${this.color};
+          width: ${this.thickness};
         }
 
         35% {
-          box-shadow: 0 calc(${_offset} * -1) ${_color},
-                      0 ${_offset} ${_color};
-          width: ${_size};
+          box-shadow: 0 calc(${this.offset} * -1) ${this.color},
+                      0 ${this.offset} ${this.color};
+          width: ${this.size};
         }
 
         70% {
-          box-shadow: calc(${_lat} * -1) calc(${_offset} * -1) ${_color},
-                      ${_lat} ${_offset} ${_color};
-          width: ${_thickness};
+          box-shadow: calc(${this.lat} * -1) calc(${this.offset} * -1) ${this.color},
+                      ${this.lat} ${this.offset} ${this.color};
+          width: ${this.thickness};
         }
 
         100% {
-          box-shadow: ${_lat} calc(${_offset} * -1) ${_color},
-                      calc(${_lat} * -1) ${_offset} ${_color};
+          box-shadow: ${this.lat} calc(${this.offset} * -1) ${this.color},
+                      calc(${this.lat} * -1) ${this.offset} ${this.color};
         }
       }
 
       @keyframes after {
         0% {
-          box-shadow: ${_offset} ${_lat} ${_color},
-                      calc(${_offset} * -1) calc(${_lat} * -1) ${_color};
-          height: ${_thickness};
+          box-shadow: ${this.offset} ${this.lat} ${this.color},
+                      calc(${this.offset} * -1) calc(${this.lat} * -1) ${this.color};
+          height: ${this.thickness};
         }
 
         35% {
-          box-shadow: ${_offset} 0 ${_color},
-                      calc(${_offset} * -1) 0 ${_color};
-          height: ${_size};
+          box-shadow: ${this.offset} 0 ${this.color},
+                      calc(${this.offset} * -1) 0 ${this.color};
+          height: ${this.size};
         }
 
         70% {
-          box-shadow: ${_offset} calc(${_lat} * -1) ${_color},
-                      calc(${_offset} * -1) ${_lat} ${_color};
-          height: ${_thickness};
+          box-shadow: ${this.offset} calc(${this.lat} * -1) ${this.color},
+                      calc(${this.offset} * -1) ${this.lat} ${this.color};
+          height: ${this.thickness};
         }
 
         100% {
-          box-shadow: ${_offset} ${_lat} ${_color},
-                      calc(${_offset} * -1) calc(${_lat} * -1) ${_color};
+          box-shadow: ${this.offset} ${this.lat} ${this.color},
+                      calc(${this.offset} * -1) calc(${this.lat} * -1) ${this.color};
         }
       }
     `;

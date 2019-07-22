@@ -19,17 +19,23 @@ export class BeatSpinner extends SpinnerElement {
     ];
   }
 
-  style({ color, margin, size }) {
+  get color() { return `var(--beat-spinner__color, ${this.props.color})`; }
+
+  get margin() { return `var(--beat-spinner__margin, ${this.props.margin}px)`; }
+
+  get size() { return `var(--beat-spinner__size, ${this.props.size}px)`; }
+
+  style() {
     return `
       .beat {
         animation-fill-mode: both;
         animation: beat 0.7s infinite linear;
-        background-color: var(--beat-spinner__color, ${color});
+        background-color: ${this.color};
         border-radius: 100%;
         display: inline-block;
-        height: var(--beat-spinner__size, ${size}px);
-        margin: var(--beat-spinner__margin, ${margin}px);
-        width: var(--beat-spinner__size, ${size}px);
+        height: ${this.size};
+        margin: ${this.margin};
+        width: ${this.size};
       }
 
       .beat:nth-child(odd)  { animation-delay: 0s; }

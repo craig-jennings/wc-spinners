@@ -18,9 +18,11 @@ export class ClimbingBoxSpinner extends SpinnerElement {
     ];
   }
 
-  style() {
-    const { color, size } = this.props;
+  get color() { return `var(--climbing-box-spinner__color, ${this.props.color})`; }
 
+  get size() { return `var(--climbing-box-spinner__size, ${this.props.size}px)`; }
+
+  style() {
     return `
       .climbing-box-spinner {
         height: 7.1em;
@@ -33,7 +35,7 @@ export class ClimbingBoxSpinner extends SpinnerElement {
         animation: climbingBox 2.5s infinite cubic-bezier(0.79, 0, 0.47, 0.97);
         background-color: transparent;
         border-radius: 15%;
-        border: 0.25em solid var(--climbing-box-spinner__color, ${color});
+        border: 0.25em solid ${this.color};
         bottom: -0.1em;
         height: 1em;
         left: 0;
@@ -43,7 +45,7 @@ export class ClimbingBoxSpinner extends SpinnerElement {
       }
 
       .hill {
-        border-left: 0.25em solid var(--climbing-box-spinner__color, ${color});
+        border-left: 0.25em solid ${this.color};
         height: 7.1em;
         left: 1.7em;
         position: absolute;
@@ -60,7 +62,7 @@ export class ClimbingBoxSpinner extends SpinnerElement {
         margin-left: -2.7em;
         width: 5.4em;
         height: 5.4em;
-        font-size: var(--climbing-box-spinner__size, ${size}px);
+        font-size: ${this.size};
       }
 
       @keyframes climbingBox {

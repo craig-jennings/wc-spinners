@@ -19,31 +19,35 @@ export class BarSpinner extends SpinnerElement {
     ];
   }
 
-  style() {
-    const { color, height, width } = this.props;
+  get color() { return `var(--bar-spinner__color, ${this.props.color})`; }
 
+  get height() { return `var(--bar-spinner__height, ${this.props.height}px)`; }
+
+  get width() { return `var(--bar-spinner__width, ${this.props.width}px)`; }
+
+  style() {
     return `
       .bar-spinner {
-        height: var(--bar-spinner__height, ${height}px);
+        height: ${this.height};
         overflow: hidden;
         position: relative;
-        width: var(--bar-spinner__width, ${width}px);
+        width: ${this.width};
       }
 
       .background {
-        background-color: var(--bar-spinner__color, ${color});
-        height: var(--bar-spinner__height, ${height}px);
+        background-color: ${this.color};
+        height: ${this.height};
         opacity: 0.2;
         position: absolute;
-        width: var(--bar-spinner__width, ${width}px);
+        width: ${this.width};
       }
 
       .long {
         animation-fill-mode: forwards;
         animation: long 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
-        background-color: var(--bar-spinner__color, ${color});
+        background-color: ${this.color};
         border-radius: 2px;
-        height: var(--bar-spinner__height, ${height}px);
+        height: ${this.height};
         position: absolute;
         will-change: left, right;
       }
@@ -51,9 +55,9 @@ export class BarSpinner extends SpinnerElement {
       .short {
         animation-fill-mode: forwards;
         animation: short 2.1s 1.15s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
-        background-color: var(--bar-spinner__color, ${color});
+        background-color: ${this.color};
         border-radius: 2px;
-        height: var(--bar-spinner__height, ${height}px);
+        height: ${this.height};
         position: absolute;
         will-change: left, right;
       }
