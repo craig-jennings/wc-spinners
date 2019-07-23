@@ -25,7 +25,7 @@ export class FlowerSpinner extends SpinnerElement {
 
   get size() { return `var(--flower-spinner__size, ${this.props.size}px)`; }
 
-  style({ color, duration, size }) {
+  style() {
     return `
       .flower-spinner {
         align-items: center;
