@@ -1,4 +1,4 @@
-import SpinnerElement from '../../SpinnerElement.js';
+import SpinnerElement from '../SpinnerElement.js';
 
 export class BounceSpinner extends SpinnerElement {
   static get is() { return 'bounce-spinner'; }

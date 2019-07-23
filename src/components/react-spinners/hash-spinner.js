@@ -1,4 +1,4 @@
-import SpinnerElement from '../../SpinnerElement.js';
+import SpinnerElement from '../SpinnerElement.js';
 
 export class HashSpinner extends SpinnerElement {
   static get is() { return 'hash-spinner'; }
@@ -45,7 +45,7 @@ export class HashSpinner extends SpinnerElement {
         display: block;
         height: calc(${this.size} / 5);
         left: 50%;
-        opacity: .9;
+        opacity: .8;
         position: absolute;
         top: 50%;
         transform: translate(-50%, -50%);

@@ -1,4 +1,4 @@
-import SpinnerElement from '../../SpinnerElement.js';
+import SpinnerElement from '../SpinnerElement.js';
 
 export class GridSpinner extends SpinnerElement {
   static get is() { return 'grid-spinner'; }

@@ -1,4 +1,4 @@
-import SpinnerElement from '../../SpinnerElement.js';
+import SpinnerElement from '../SpinnerElement.js';
 
 export class HalfCircleSpinner extends SpinnerElement {
   static get is() { return 'half-circle-spinner'; }

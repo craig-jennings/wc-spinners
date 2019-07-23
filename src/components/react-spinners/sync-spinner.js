@@ -1,4 +1,4 @@
-import SpinnerElement from '../../SpinnerElement.js';
+import SpinnerElement from '../SpinnerElement.js';
 
 export class SyncSpinner extends SpinnerElement {
   static get is() { return 'sync-spinner'; }

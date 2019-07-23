@@ -1,4 +1,4 @@
-import SpinnerElement from '../../SpinnerElement.js';
+import SpinnerElement from '../SpinnerElement.js';
 
 export class LoopingRhombusesSpinner extends SpinnerElement {
   static get is() { return 'looping-rhombuses-spinner'; }

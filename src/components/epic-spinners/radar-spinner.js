@@ -1,4 +1,4 @@
-import SpinnerElement from '../../SpinnerElement.js';
+import SpinnerElement from '../SpinnerElement.js';
 
 export class RadarSpinner extends SpinnerElement {
   static get is() { return 'radar-spinner'; }
