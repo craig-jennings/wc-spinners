@@ -1,0 +1,158 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+a {
+  border-bottom: 1px solid #676767;
+  color: #676767;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+a:focus,
+a:hover {
+  border-bottom-color: #222222;
+  color: #222222;
+}
+
+.epic-spinners {
+  background-color: #292739;
+  color: #fafafa;
+}
+.epic-spinners a {
+  border-bottom: 1px solid #ff1d5e;
+  color: #ff1d5e;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.epic-spinners a:focus,
+.epic-spinners a:hover {
+  border-bottom-color: #fafafa;
+  color: #fafafa;
+}
+.epic-spinners .spinner-collection__body {
+  display: flex;
+  flex-wrap: wrap;
+  grid-column: 2/span 1;
+  justify-content: center;
+}
+.epic-spinners .spinner-container {
+  align-items: center;
+  border-radius: 10px;
+  display: flex;
+  grid-column: 1;
+  height: 150px;
+  justify-content: center;
+  padding: 10px;
+  position: relative;
+  transition: all 0.25s;
+  width: 150px;
+}
+.epic-spinners .spinner-container:hover {
+  background-color: #fafafa;
+  transform: scale(1.1);
+}
+.epic-spinners .spinner-container:hover .name {
+  display: initial;
+}
+.epic-spinners .spinner-container .name {
+  bottom: 20px;
+  color: #ff1d5e;
+  display: none;
+  font-size: 12px;
+  margin-top: 20px;
+  position: absolute;
+}
+
+.header {
+  margin-bottom: 1rem;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  margin-bottom: 1rem;
+}
+
+.install {
+  background-color: #999999;
+  border-radius: 4px;
+  color: #fafafa;
+  display: inline-block;
+  line-height: 2rem;
+  margin-bottom: 1rem;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+.react-spinners {
+  background-color: #fafafa;
+  color: #222222;
+}
+.react-spinners.spinner-collection {
+  grid-template-columns: auto minmax(200px, calc(200px * 7)) auto;
+}
+.react-spinners a {
+  border-bottom: 1px solid #999999;
+  color: #999999;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.react-spinners a:focus,
+.react-spinners a:hover {
+  border-bottom-color: #222222;
+  color: #222222;
+}
+.react-spinners .spinner-collection__body {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fill, 200px);
+  grid-template-rows: repeat(auto-fill, 200px);
+  justify-content: center;
+  grid-column: 2/span 1;
+}
+.react-spinners .spinner-container {
+  align-items: center;
+  border: 1px solid #e2e2e2;
+  box-shadow: 1px 1px 1px #e2e2e2;
+  display: flex;
+  height: 200px;
+  justify-content: center;
+  padding: 10px;
+  position: relative;
+  transition: all 0.25s;
+  width: 200px;
+}
+.react-spinners .name {
+  bottom: 20px;
+  color: #222222;
+  position: absolute;
+}
+
+.spinner-collection {
+  display: grid;
+  grid-template-columns: auto minmax(200px, calc(150px * 5)) auto;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  padding: 1rem 0;
+}
+.spinner-collection__header {
+  grid-column: 1/span 3;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.spinner-collection__footer {
+  grid-column: 1/span 3;
+  margin: 1rem 0;
+  text-align: center;
+}

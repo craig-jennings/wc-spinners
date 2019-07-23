@@ -1,0 +1,49 @@
+.react-spinners {
+  background-color: #fafafa;
+  color: #222222;
+
+  &.spinner-collection {
+    grid-template-columns: auto minmax(200px, calc(200px * 7)) auto;
+  }
+
+  a {
+    border-bottom: 1px solid #999999;
+    color: #999999;
+    text-decoration: none;
+    transition: all .2s;
+  }
+
+  a:focus,
+  a:hover {
+    border-bottom-color: #222222;
+    color: #222222;
+  }
+
+  .spinner-collection__body {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fill, 200px);
+    grid-template-rows: repeat(auto-fill, 200px);
+    justify-content: center;
+    grid-column: 2 / span 1;
+  }
+
+  .spinner-container {
+    align-items: center;
+    border: 1px solid #e2e2e2;
+    box-shadow: 1px 1px 1px #e2e2e2;
+    display: flex;
+    height: 200px;
+    justify-content: center;
+    padding: 10px;
+    position: relative;
+    transition: all .25s;
+    width: 200px;
+  }
+
+  .name {
+    bottom: 20px;
+    color: #222222;
+    position: absolute;
+  }
+}

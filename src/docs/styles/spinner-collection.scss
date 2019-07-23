@@ -1,0 +1,20 @@
+.spinner-collection {
+  display: grid;
+  grid-template-columns: auto minmax(200px, calc(150px * 5)) auto;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  padding: 1rem 0;
+
+
+  &__header {
+    grid-column: 1 / span 3;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  &__footer {
+    grid-column: 1 / span 3;
+    margin: 1rem 0;
+    text-align: center;
+  }
+}

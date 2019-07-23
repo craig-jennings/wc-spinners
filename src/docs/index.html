@@ -5,126 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Web Component Spinners</title>
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      font-family: sans-serif;
-    }
-
-    body {
-      background-color: #292739;
-      color: #fafafa;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-      margin: 0;
-      min-height: 100vh;
-    }
-
-    a {
-      border-bottom: 1px solid #ff1d5e;
-      color: #ff1d5e;
-      text-decoration: none;
-      transition: all .2s;
-    }
-
-    a:focus,
-    a:hover {
-      border-bottom-color: #fafafa;
-      color: #fafafa;
-    }
-
-    code {
-      background-color: #4c486b;
-      border-radius: 5px;
-      display: inline-block;
-      line-height: 1.5rem;
-      padding: 20px 40px;
-      text-align: center;
-    }
-
-    footer {
-      grid-column: 2 / span 2;
-      line-height: 1.5rem;
-      padding: 20px;
-    }
-
-    h1,
-    h4 {
-      margin-bottom: 20px;
-    }
-
-    header {
-      grid-column: 1 / span 3;
-      padding: 10px 20px;
-      text-align: center;
-    }
-
-    section {
-      display: grid;
-      grid-template-columns: auto minmax(200px, calc(150px * 5)) auto;
-      grid-template-rows: auto 1fr auto;
-    }
-
-    .spinners {
-      display: flex;
-      flex-wrap: wrap;
-      grid-column: 2 / span 1;
-      justify-content: center;
-    }
-
-    .spinner-container {
-      align-items: center;
-      border-radius: 10px;
-      display: flex;
-      grid-column: 1;
-      height: 150px;
-      justify-content: center;
-      padding: 10px;
-      position: relative;
-      transition: all .25s;
-      width: 150px;
-    }
-
-    .name {
-      bottom: 20px;
-      color: #ff1d5e;
-      display: none;
-      font-size: 12px;
-      margin-top: 20px;
-      position: absolute;
-    }
-
-    .spinner-container:hover {
-      background-color: #fafafa;
-      transform: scale(1.1);
-    }
-
-    .spinner-container:hover .name {
-      display: initial;
-    }
-  </style>
 </head>
 <body>
-  <section>
-    <header>
-      <h1>Epic Spinner Web Components</h1>
+  <div class="header">
+    <h1 class="title">Web Component Spinners</h1>
+    <h3 class="subtitle">A collection of spinners rewritten as native web components</h3>
 
-      <h4>
-        <a href="https://github.com/craigjennings11/wc-epic-spinners/">Get Started</a>
-      </h4>
+    <code class="install">
+      <div>yarn add wc-spinners</div>
+      <div>npm i --save wc-spinners</div>
+    </code>
 
-      <code>
-        <div>npm i --save wc-epic-spinners</div>
-        <div>yarn add wc-epic-spinners</div>
-      </code>
-    </header>
+    <h4>
+      <a href="https://github.com/craigjennings11/wc-spinners/">Get Started</a>
+    </h4>
+  </div>
 
-    <div class="spinners">
+  <div class="epic-spinners spinner-collection">
+    <h1 class="spinner-collection__header">Epic Spinner Web Components</h1>
+
+    <div class="spinner-collection__body">
       <div class="spinner-container">
         <atom-spinner></atom-spinner>
         <div class="name">Atom</div>
@@ -167,7 +67,6 @@
 
       <div class="spinner-container">
         <hollow-dots-spinner></hollow-dots-spinner>
-        <div class="name"></div>
         <div class="name">Hollow Dots</div>
       </div>
 
@@ -227,23 +126,15 @@
       </div>
     </div>
 
-    <footer>
-      <div>
-        By <a href="https://github.com/craigjennings11">@craigjennings11</a>
-      </div>
+    <div class="spinner-collection__footer">
+      These spinners are an implementation of the <a href="https://epic-spinners.epicmax.co">Epic Spinners</a> project created by <a href="http://epicmax.co/">Epicmax</a>
+    </div>
+  </div>
 
-      <div>
-        This project is an implementation of the <a href="https://epic-spinners.epicmax.co">Epic Spinners</a> project created by <a href="http://epicmax.co/">Epicmax</a>
-      </div>
-    </footer>
-  </section>
+  <div class="react-spinners spinner-collection">
+    <h1 class="spinner-collection__header">React Spinner Web Components</h1>
 
-  <section>
-    <header>
-      <h1>React Spinner Web Components</h1>
-    </header>
-
-    <div class="spinners">
+    <div class="spinner-collection__body">
       <div class="spinner-container">
         <bar-spinner></bar-spinner>
         <div class="name">Bar Spinner</div>
@@ -350,15 +241,9 @@
       </div>
     </div>
 
-    <footer>
-      <div>
-        By <a href="https://github.com/craigjennings11">@craigjennings11</a>
-      </div>
-
-      <div>
-        This project is an implementation of the <a href="https://www.react-spinners.com/">React Spinners</a> project created by <a href="https://github.com/davidhu2000">davidhu2000</a>
-      </div>
-    </footer>
-  </section>
+    <div class="spinner-collection__footer">
+      These spinners are an implementation of the <a href="https://www.react-spinners.com/">React Spinners</a> project created by <a href="https://github.com/davidhu2000">davidhu2000</a>
+    </div>
+  </div>
 </body>
 </html>

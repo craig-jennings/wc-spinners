@@ -1,9 +1,9 @@
 import html from 'rollup-plugin-fill-html';
-import pkg from './package.json';
 import resolve from 'rollup-plugin-node-resolve';
+import sass from 'rollup-plugin-sass';
 
 export default {
-  input: pkg.main,
+  input: 'src/docs/index.js',
 
   output: {
     file: 'docs/index.js',
@@ -13,10 +13,8 @@ export default {
   },
 
   plugins: [
+    html({ template: 'src/docs/index.html' }),
     resolve(),
-
-    html({
-      template: 'src/index.html',
-    }),
+    sass({ output: true }),
   ],
 };
