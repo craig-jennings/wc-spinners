@@ -1,23 +1,25 @@
-# Web Component Epic Spinners
-[![npm](https://img.shields.io/npm/v/wc-epic-spinners.svg?style=popout-square)](https://www.npmjs.com/package/wc-epic-spinners)
-[![npm](https://img.shields.io/npm/l/wc-epic-spinners.svg?style=popout-square)](https://github.com/craigjennings11/wc-epic-spinners/blob/master/LICENSE)
+# Web Component Spinners
+[![npm](https://img.shields.io/npm/v/wc-spinners.svg?style=popout-square)](https://www.npmjs.com/package/wc-spinners)
+[![npm](https://img.shields.io/npm/l/wc-spinners.svg?style=popout-square)](https://github.com/craigjennings11/wc-spinners/blob/master/LICENSE)
 
-Web Component implementations of [epic-spinners](https://github.com/epicmaxco/epic-spinners) by [EpicMax](http://epic-spinners.epicmax.co/)
+Web Component implementations of 
+- [Epic Spinners](https://github.com/epicmaxco/epic-spinners) by [EpicMax](http://epic-spinners.epicmax.co/)
+- [React Spinners](https://www.react-spinners.com/) by [davidhu2000](https://github.com/davidhu2000)
 
 ## Installation
 
-`npm install --save wc-epic-spinners`
+`npm install --save wc-spinners`
 
 OR
 
-`yarn add wc-epic-spinners`
+`yarn add wc-spinners`
 
 ## Usage
 
 ### Javascript
 
-```js  
-  import 'wc-epic-spinners';
+```js
+  import 'wc-spinners';
   
   const spinner = document.createElement('atom-spinner');
   document.body.append(spinner);
@@ -26,7 +28,7 @@ OR
 or for a specific spinner
 
 ```js
-  import 'wc-epic-spinners/dist/atom-spinner.js';
+  import 'wc-spinners/dist/atom-spinner.js';
 
   const spinner = document.createElement('atom-spinner');
   document.body.append(spinner);
@@ -38,7 +40,7 @@ or for a specific spinner
 <body>
   <atom-spinner></atom-spinner>
 
-  <script src="wc-epic-spinners.js"></script>
+  <script src="wc-spinners.js"></script>
 </body>
 ```
 
@@ -48,13 +50,15 @@ or for a specific spinner
 <body>
   <atom-spinner></atom-spinner>
 
-  <script src="wc-epic-spinners/dist/atom-spinner.js"></script>
+  <script src="wc-spinners/dist/atom-spinner.js"></script>
 </body>
 ```
 
 ## Configuration
 
-You can easily configure a spinner's size, color, and animation speed by either setting an attribute on the spinner element or by assigning a value to a corresponding css variable.
+You can easily configure a spinner's display by either setting an attribute on the spinner element or by assigning a value to a corresponding css variable.
+
+**Note**: when setting an attribute the unit is implied (e.g. size="60" becomes `60px` automatically). If you want to change the unit type, use css variables instead (`--spinner__size: 60rem`)
 
 ### Attributes
 
@@ -70,7 +74,7 @@ You can easily configure a spinner's size, color, and animation speed by either 
 
 ```html
 <style>
-  :root {
+  atom-spinner {
     --atom-spinner__color: #ff1d5e;
     --atom-spinner__duration: 1s;
     --atom-spinner__size: 60px;
@@ -80,136 +84,68 @@ You can easily configure a spinner's size, color, and animation speed by either 
 <atom-spinner></atom-spinner>
 ```
 
-## Components list
+## Attribute list
 
+### Epic Spinners
 
-```html
-<atom-spinner
-  color="#ff1d5e"
-  duration="1"
-  size="60"
-></atom-spinner>
+**NOTE**: `count` is not supported by css variables
 
-<breeding-rhombus-spinner
-  color="#ff1d5e"
-  duration="2"
-  size="65"
-></breeding-rhombus-spinner>
+Default color: `#ff1d5e`
 
-<circles-to-rhombuses-spinner
-  color="#ff1d5e"
-  count="3"
-  duration="1.2"
-  size="15"
-></circles-to-rhombuses-spinner>
+|                            Spinner | size | duration | count |
+| ---------------------------------: | :--: | :------: | :---: |
+|                       atom-spinner | `60` | `1`      |
+|           breeding-rhombus-spinner | `65` | `2`      | `3`   |
+|       circles-to-rhombuses-spinner | `15` | `1.2`    |
+|                fingerprint-spinner | `64` | `1.5`    |
+|                     flower-spinner | `70` | `2.5`    |
+| fulfilling-bouncing-circle-spinner | `50` | `4`      |
+|          fulfilling-square-spinner | `50` | `4`      |
+|                half-circle-spinner | `60` | `1`      |
+|                hollow-dots-spinner | `15` | `1`      | `3`   |
+|       intersecting-cirlces-spinner | `35` | `1.2`    |
+|          looping-rhombuses-spinner | `15` | `2.5`    |
+|                      orbit-spinner | `55` | `1.2`    |
+|                      pixel-spinner | `70` | `2`      |
+|                      radar-spinner | `60` | `2`      |
+|            scaling-squares-spinner | `65` | `1.25`   |
+|     self-fulfilling-square-spinner | `10` | `6`      |
+|                  semipolar-spinner | `65` | `2`      |
+|                     spring-spinner | `60` | `3`      |
+|           swapping-squares-spinner | `65` | `1`      |
+|              trinity-rings-spinner | `60` | `1.5`    |
 
-<fingerprint-spinner
-  color="#ff1d5e"
-  duration="1.5"
-  size="64"
-></fingerprint-spinner>
+### React Spinners
 
-<flower-spinner
-  color="#ff1d5e"
-  duration="2.5"
-  size="70"
-></flower-spinner>
+Default color: `#36d7b7`
 
-<fulfilling-bouncing-circle-spinner
-  color="#ff1d5e"
-  duration="4"
-  size="60"
-></fulfilling-bouncing-circle-spinner>
-
-<fulfilling-square-spinner
-  color="#ff1d5e"
-  duration="4"
-  size="50"
-></fulfilling-square-spinner>
-
-<half-circle-spinner
-  color="#ff1d5e"
-  duration="1"
-  size="60"
-></half-circle-spinner>
-
-<hollow-dots-spinner
-  color="#ff1d5e"
-  count="3"
-  duration="1"
-  size="15"
-></hollow-dots-spinner>
-
-<intersecting-circles-spinner
-  color="#ff1d5e"
-  duration="1.2"
-  size="70"
-></intersecting-circles-spinner>
-
-<looping-rhombuses-spinner
-  color="#ff1d5e"
-  duration="2.5"
-  size="15"
-></looping-rhombuses-spinner>
-
-<orbit-spinner
-  color="#ff1d5e"
-  duration="1.2"
-  size="55"
-></orbit-spinner>
-
-<pixel-spinner
-  color="#ff1d5e"
-  duration="2"
-  size="70"
-></pixel-spinner>
-
-<radar-spinner
-  color="#ff1d5e"
-  duration="2"
-  size="60"
-></radar-spinner>
-
-<scaling-squares-spinner
-  color="#ff1d5e"
-  duration="1.25"
-  size="65"
-></scaling-squares-spinner>
-
-<self-building-square-spinner
-  color="#ff1d5e"
-  duration="6"
-  size="40"
-></self-building-square-spinner>
-
-<semipolar-spinner
-  color="#ff1d5e"
-  duration="2"
-  size="65"
-></semipolar-spinner>
-
-<spring-spinner
-  color="#ff1d5e"
-  duration="3"
-  size="60"
-></spring-spinner>
-
-<swapping-squares-spinner
-  color="#ff1d5e"
-  duration="1"
-  size="65"
-></swapping-squares-spinner>
-
-<trinity-rings-spinner
-  color="#ff1d5e"
-  duration="1.5"
-  size="66"
-></trinity-rings-spinner>
-```
+|              Spinner | size | height | width | radius | margin |
+| -------------------: | :--: | :----: | :---: | :----: | :----: |
+|          bar-spinner |      | `4`    | `100` |        |
+|         beat-spinner | `15` |        |       |        | `2`    |
+|       bounce-spinner | `60` |
+|       circle-spinner | `60` |
+| climbing-box-spinner | `15` |
+|         clip-spinner | `35` |
+|          dot-spinner | `60` |
+|         fade-spinner |      | `15`   | `5`   |  `10`  |
+|         grid-spinner | `15` |        |       |        | `2`    |
+|         hash-spinner | `50` |
+|         moon-spinner | `60` |
+|       pacman-spinner | `25` |        |       |        | `2`    |
+|    propagate-spinner | `15` |
+|        pulse-spinner | `15` |        |       |        | `2`    |
+|         ring-spinner | `60` |
+|         rise-spinner | `15` |        |       |        | `2`    |
+|       rotate-spinner | `15` |        |       |        | `5`    |
+|        scale-spinner |      | `35`   | `4`   |  `2`   | `2`    |
+|         skew-spinner | `20` |
+|       square-spinner | `50` |
+|         sync-spinner | `15` |        |       |        | `2`    |
 
 ## Support?
 - Star the repo :star:
-- Create pull requests 
+- Create pull requests
 
 ## License
-[MIT](https://github.com/craigjennings11/wc-epic-spinners/blob/master/LICENSE) license.
+[MIT](https://github.com/craigjennings11/wc-spinners/blob/master/LICENSE) license.

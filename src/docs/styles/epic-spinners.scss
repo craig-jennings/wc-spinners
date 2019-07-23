@@ -1,0 +1,55 @@
+.epic-spinners {
+  background-color: #292739;
+  color: #fafafa;
+
+  a {
+    border-bottom: 1px solid #ff1d5e;
+    color: #ff1d5e;
+    text-decoration: none;
+    transition: all .2s;
+  }
+
+  a:focus,
+  a:hover {
+    border-bottom-color: #fafafa;
+    color: #fafafa;
+  }
+
+  .spinner-collection__body {
+    display: flex;
+    flex-wrap: wrap;
+    grid-column: 2 / span 1;
+    justify-content: center;
+  }
+
+  .spinner-container {
+    align-items: center;
+    border-radius: 10px;
+    display: flex;
+    grid-column: 1;
+    height: 150px;
+    justify-content: center;
+    padding: 10px;
+    position: relative;
+    transition: all .25s;
+    width: 150px;
+
+    &:hover {
+      background-color: #fafafa;
+      transform: scale(1.1);
+
+      .name {
+        display: initial;
+      }
+    }
+
+    .name {
+      bottom: 20px;
+      color: #ff1d5e;
+      display: none;
+      font-size: 12px;
+      margin-top: 20px;
+      position: absolute;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+a {
+  border-bottom: 1px solid #676767;
+  color: #676767;
+  text-decoration: none;
+  transition: all .2s;
+}
+
+a:focus,
+a:hover {
+  border-bottom-color: #222222;
+  color: #222222;
+}
+
+@import "./styles/epic-spinners";
+@import "./styles/header";
+@import "./styles/react-spinners";
+@import "./styles/spinner-collection";
+

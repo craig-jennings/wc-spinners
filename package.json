@@ -1,33 +1,34 @@
 {
-  "name": "wc-epic-spinners",
-  "description": "Epic spinners implemented as native web components",
-  "version": "1.0.1",
-  "browser": "dist/wc-epic-spinners.js",
+  "name": "wc-spinners",
+  "description": "Spinner libraries implemented as native web components",
+  "version": "1.0.0",
+  "browser": "dist/wc-spinners.js",
   "main": "src/index.js",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/craigjennings11/wc-epic-spinners.git"
+    "url": "https://github.com/craigjennings11/wc-spinners.git"
   },
   "engines": {
     "node": ">=8.9.0"
   },
   "keywords": [
-    "web components",
     "epic spinners",
-    "spinners"
+    "react spinners",
+    "spinners",
+    "web components"
   ],
   "files": [
     "/dist/**",
     "/src/**"
   ],
   "scripts": {
-    "build:dev": "rollup -c rollup.config.js",
+    "build:dev": "rollup -c",
     "build:prod": "rollup -c rollup.config.prod.js",
-    "build:watch": "rollup -c rollup.config.js --watch",
+    "build:watch": "rollup -c --watch",
     "clean": "rm -rf dist/",
     "prepublishOnly": "npm-run-all clean build:prod",
-    "serve": "live-server docs/",
+    "serve": "live-server --open=docs/index.html",
     "start": "npm-run-all -p serve build:watch",
     "test": "eslint src/ --quiet"
   },
@@ -42,6 +43,7 @@
     "rollup-plugin-babel-minify": "^9.0.0",
     "rollup-plugin-filesize": "^6.0.1",
     "rollup-plugin-fill-html": "^1.1.0",
-    "rollup-plugin-node-resolve": "^5.2.0"
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-sass": "^1.2.2"
   }
 }
