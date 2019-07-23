@@ -8,11 +8,11 @@ Web Component implementations of
 
 ## Installation
 
-`npm install --save wc-spinners`
+`yarn add wc-spinners`
 
 OR
 
-`yarn add wc-spinners`
+`npm install --save wc-spinners`
 
 ## Usage
 
