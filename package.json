@@ -23,7 +23,7 @@
     "/src/**"
   ],
   "scripts": {
-    "build:dev": "rollup -c",
+    "build:docs": "rollup -c",
     "build:prod": "rollup -c rollup.config.prod.js",
     "build:watch": "rollup -c --watch",
     "clean": "rm -rf dist/",
