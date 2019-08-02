@@ -1,5 +1,6 @@
 # directories
 dist/
+docs/
 node_modules/
 
 # files
