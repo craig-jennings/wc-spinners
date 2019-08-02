@@ -1,6 +1,8 @@
 # Web Component Spinners
 [![npm](https://img.shields.io/npm/v/wc-spinners.svg?style=popout-square)](https://www.npmjs.com/package/wc-spinners)
 [![npm](https://img.shields.io/npm/l/wc-spinners.svg?style=popout-square)](https://github.com/craigjennings11/wc-spinners/blob/master/LICENSE)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2280cdf4-8574-476c-9b18-3e122a32f32e/deploy-status)](https://app.netlify.com/sites/wc-spinners/deploys)
+
 
 Web Component implementations of 
 - [Epic Spinners](https://github.com/epicmaxco/epic-spinners) by [EpicMax](http://epic-spinners.epicmax.co/)
