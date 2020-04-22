@@ -7,6 +7,7 @@
 Web Component implementations of 
 - [Epic Spinners](https://github.com/epicmaxco/epic-spinners) by [EpicMax](http://epic-spinners.epicmax.co/)
 - [React Spinners](https://www.react-spinners.com/) by [davidhu2000](https://github.com/davidhu2000)
+- [React Spinners CSS](https://bit.dev/joshk/react-spinners-css) by [JoshK2](https://github.com/JoshK2)
 
 ## Installation
 
@@ -14,7 +15,7 @@ Web Component implementations of
 
 OR
 
-`npm install --save wc-spinners`
+`npm i --save wc-spinners`
 
 ## Usage
 
@@ -60,7 +61,7 @@ or for a specific spinner
 
 You can easily configure a spinner's display by either setting an attribute on the spinner element or by assigning a value to a corresponding css variable.
 
-**Note**: when setting an attribute the unit is implied (e.g. size="60" becomes `60px` automatically). If you want to change the unit type, use css variables instead (`--spinner__size: 60rem`)
+**Note**: When setting an attribute the unit is implied (e.g. size="60" becomes `60px` automatically). If you want to change the unit type, use css variables instead (`--spinner__size: 60rem`)
 
 ### Attributes
 
@@ -97,14 +98,14 @@ Default color: `#ff1d5e`
 |                            Spinner | size | duration | count |
 | ---------------------------------: | :--: | :------: | :---: |
 |                       atom-spinner | `60` | `1`      |
-|           breeding-rhombus-spinner | `65` | `2`      | `3`   |
+|           breeding-rhombus-spinner | `65` | `2`      |  `3`  |
 |       circles-to-rhombuses-spinner | `15` | `1.2`    |
 |                fingerprint-spinner | `64` | `1.5`    |
 |                     flower-spinner | `70` | `2.5`    |
 | fulfilling-bouncing-circle-spinner | `50` | `4`      |
 |          fulfilling-square-spinner | `50` | `4`      |
 |                half-circle-spinner | `60` | `1`      |
-|                hollow-dots-spinner | `15` | `1`      | `3`   |
+|                hollow-dots-spinner | `15` | `1`      |  `3`  |
 |       intersecting-cirlces-spinner | `35` | `1.2`    |
 |          looping-rhombuses-spinner | `15` | `2.5`    |
 |                      orbit-spinner | `55` | `1.2`    |
@@ -144,6 +145,27 @@ Default color: `#36d7b7`
 |         skew-spinner | `20` |
 |       square-spinner | `50` |
 |         sync-spinner | `15` |        |       |        | `2`    |
+
+### React Spinners CSS
+
+Default color: `#7f58af`
+
+|              Spinner | size |
+| -------------------: | :--: |
+|   rsc-circle-spinner | `64` |
+|      default-spinner | `80` |
+|    dual-ring-spinner | `80` |
+|     ellipsis-spinner | `80` |
+|     facebook-spinner | `80` |
+|     rsc-grid-spinner | `80` |
+|        heart-spinner | `80` |
+|    hourglass-spinner | `80` |
+|     orbitals-spinner |      |
+|     ouroboro-spinner |      |
+|     rsc-ring-spinner | `80` |
+|       ripple-spinner | `80` |
+|       roller-spinner |      |
+|      spinner-spinner |      |
 
 ## Support?
 - Star the repo :star:

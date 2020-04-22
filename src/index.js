@@ -42,3 +42,19 @@ import './components/react-spinners/scale-spinner.js';
 import './components/react-spinners/skew-spinner.js';
 import './components/react-spinners/square-spinner.js';
 import './components/react-spinners/sync-spinner.js';
+
+// React Spinner CSS
+import './components/react-spinners-css/circle-spinner.js';
+import './components/react-spinners-css/default-spinner.js';
+import './components/react-spinners-css/dual-ring-spinner.js';
+import './components/react-spinners-css/ellipsis-spinner.js';
+import './components/react-spinners-css/facebook-spinner.js';
+import './components/react-spinners-css/grid-spinner.js';
+import './components/react-spinners-css/heart-spinner.js';
+import './components/react-spinners-css/hourglass-spinner.js';
+import './components/react-spinners-css/orbitals-spinner.js';
+import './components/react-spinners-css/ouroboro-spinner.js';
+import './components/react-spinners-css/ring-spinner.js';
+import './components/react-spinners-css/ripple-spinner.js';
+import './components/react-spinners-css/roller-spinner.js';
+import './components/react-spinners-css/spinner-spinner.js';
