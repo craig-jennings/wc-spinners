@@ -5,7 +5,7 @@
 
 
 Web Component implementations of 
-- [Epic Spinners](https://github.com/epicmaxco/epic-spinners) by [EpicMax](http://epic-spinners.epicmax.co/)
+- [Epic Spinners](https://github.com/epicmaxco/epic-spinners) by [EpicMax](https://epicmax.co/)
 - [React Spinners](https://www.react-spinners.com/) by [davidhu2000](https://github.com/davidhu2000)
 - [React Spinners CSS](https://bit.dev/joshk/react-spinners-css) by [JoshK2](https://github.com/JoshK2)
 
