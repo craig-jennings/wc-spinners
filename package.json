@@ -1,7 +1,7 @@
 {
   "name": "wc-spinners",
   "description": "Spinner libraries implemented as native web components",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "browser": "dist/wc-spinners.js",
   "main": "src/index.js",
   "license": "MIT",
