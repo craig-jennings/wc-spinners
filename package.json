@@ -23,27 +23,25 @@
     "/src/**"
   ],
   "scripts": {
-    "build:docs": "rollup -c",
+    "build:docs": "rollup -c rollup.config.docs.js",
     "build:prod": "rollup -c rollup.config.prod.js",
-    "build:watch": "rollup -c --watch",
-    "clean": "rm -rf dist/",
+    "clean": "rm -rf dist/ docs/",
     "prepublishOnly": "npm-run-all clean build:prod",
-    "serve": "live-server --open=docs/index.html",
-    "start": "npm-run-all -p serve build:watch",
+    "start": "rollup -c rollup.config.docs.js -w",
     "test": "eslint src/ --quiet"
   },
   "devDependencies": {
     "eslint": "^6.0.1",
-    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-sort-imports-es6-autofix": "^0.4.0",
-    "live-server": "^1.2.1",
+    "eslint-plugin-sort-imports-es6-autofix": "^0.5.0",
     "npm-run-all": "^4.1.5",
-    "rollup": "^1.1.2",
-    "rollup-plugin-babel-minify": "^9.0.0",
-    "rollup-plugin-filesize": "^6.0.1",
-    "rollup-plugin-fill-html": "^1.1.0",
+    "rollup": "^2.7.2",
+    "rollup-plugin-babel-minify": "^10.0.0",
+    "rollup-plugin-copy-assets": "^2.0.1",
+    "rollup-plugin-filesize": "^7.0.0",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-sass": "^1.2.2"
+    "rollup-plugin-sass": "^1.2.2",
+    "rollup-plugin-serve": "^1.0.1"
   }
 }

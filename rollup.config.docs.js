@@ -1,6 +1,7 @@
-import html from 'rollup-plugin-fill-html';
+import copy from 'rollup-plugin-copy-assets';
 import resolve from 'rollup-plugin-node-resolve';
 import sass from 'rollup-plugin-sass';
+import serve from 'rollup-plugin-serve';
 
 export default {
   input: 'src/docs/index.js',
@@ -9,12 +10,15 @@ export default {
     file: 'docs/index.js',
     format: 'umd',
     name: 'WcSpinners',
-    sourcemap: 'inline',
   },
 
   plugins: [
-    html({ template: 'src/docs/index.html' }),
+    copy({
+      assets: ['src/index.html'],
+    }),
+
     resolve(),
     sass({ output: true }),
+    serve('docs'),
   ],
 };

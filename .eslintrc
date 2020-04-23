@@ -13,7 +13,7 @@
     "class-methods-use-this": "off",
     "func-names": ["error", "as-needed"],
     "import/extensions": ["error", "always", { "ignorePackages": true }],
-    "import/first": ["error", { "absolute-first": false }],
+    "import/first": "error",
     "import/no-unresolved": "off",
     "import/order": "off",
     "import/prefer-default-export": "off",
