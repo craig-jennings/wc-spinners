@@ -19,6 +19,6 @@ export default {
 
     resolve(),
     sass({ output: true }),
-    serve('docs'),
+    process.env.ROLLUP_WATCH && serve('docs'),
   ],
 };
