@@ -35,8 +35,7 @@ export class RippleSpinner extends SpinnerElement {
         border-color: ${this.color};
         border-radius: 50%;
         border-style: solid;
-        border-width: calc(${this.size} * 0.05),
-        opacity: 1;
+        border-width: calc(${this.size} * 0.05);
         position: absolute;
       }
 
@@ -47,18 +46,18 @@ export class RippleSpinner extends SpinnerElement {
       @keyframes lds-ripple {
         0% {
           height: 0;
-          left: 45%;
+          left: 50%;
           opacity: 1;
-          top: 45%;
+          top: 50%;
           width: 0;
         }
 
         100% {
-          height: 90%;
+          height: 100%;
           left: 0px;
           opacity: 0;
           top: 0px;
-          width: 90%;
+          width: 100%;
         }
       }
     `;
